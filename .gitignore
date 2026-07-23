@@ -1,40 +1,95 @@
 # Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+
+# Virtual Environments
 .venv/
 venv/
+env/
 
-# Environment
+# Environment Variables
+
 .env
 .env.*
+!.env.example
 
-# Database
-*.db
-
-# Node
-node_modules/
-
-# Next
-.next/
 
 # Logs
+
+
 *.log
+logs/
 
-# macOS
-.DS_Store
 
-# VS Code
-.vscode/
+# Python Testing
 
-# Pytest
+
 .pytest_cache/
-
-# Coverage
 .coverage
+coverage.xml
 htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+
+# Jupyter
+
+.ipynb_checkpoints/
+
+
+# Node
+
+
+node_modules/
+
+
+# Next.js
+
+
+.next/
+out/
+
+
+# Build
+
+
+dist/
+build/
+
+
+# IDE
+
+
+.vscode/
+.idea/
+
+
+# Operating System
+
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+
 
 # Docker
+
 *.pid
 
+# Database
+
+*.db
+*.sqlite3
+
+
 # Misc
-.idea/
+*.tmp
+*.bak
+*.swp
+
+
+# macOS
+
+.AppleDouble
+.LSOverride
