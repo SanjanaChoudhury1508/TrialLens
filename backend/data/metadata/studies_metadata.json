@@ -1,0 +1,238 @@
+[
+  {
+    "nct_id": "NCT02113852",
+    "brief_title": "Study of Blood, Tumor and Adjacent Normal Tissue Samples From Chinese Smoking Induced Lung Cancer Patients",
+    "official_title": "Study of Blood, Tumor and Adjacent Normal Tissue Samples From Chinese Smoking Induced Lung Cancer Patients",
+    "study_type": "OBSERVATIONAL",
+    "phase": null,
+    "status": "COMPLETED",
+    "conditions": [
+      "Non Small Cell Lung Cancer"
+    ],
+    "summary": "This is an epidemiological,multicenter study of genomic and expression profiles of patients with newly diagnosed NSCLC.Two hundred and fifty NSCLC patients who fulfill the criteria are to be recruited by investigational sites.Approximately 100 of them will be from retrospectively collected samples with detailed clinical and 2-year follow-up information after surgeries.The demographics,cancer/adjacent normal tissue and matched blood sample will be collected after the patient had provided informed consent.All tissue samples will be analyzed for somatic mutations by exome deep sequencing,mRNA expression profiling by RNA sequencing and chromosome copy number variation by SNP array at the designated laboratories.",
+    "sponsor": "Guangdong Association of Clinical Trials",
+    "enrollment": 250,
+    "eligibility": "Inclusion Criteria:\n\n1. Provision of written informed consent.\n2. Male or female aged\u226518 years.\n3. .Histological or cytologically confirmed primary NSCLC\uff0cincluding histological subtypes:adenocarcinoma,squamous cell carcinoma and large cell carcinoma etc.\n4. .Provision of surgical specimen and blood sample.The retrospective samples will be collected between 2006and 2012 from the bio-bank.\n5. Patients must be willing to provide detailed clinical information (sex,age,geographic place,tumor stage,grade,size,smoking history,treatment history if any and outcome data).\n6. Heavy smokers(defined as having smoked 20 pack-years or more).\n7. Treatment naive patients:No prior chemotherapy,biological,immunological therapy or radical radiotherapy is permitted.\n\nExclusion Criteria:\n\n* Not applicable",
+    "interventions": null,
+    "primary_outcomes": [
+      {
+        "measure": "whole genome copy number variation in NSCLC patients",
+        "description": "To indentify and characterize somatic mutations in coding region (exome) in NSCLC patients through next generation sequencing of the tumor and blood samples.To identify and characterize whole genome copy number variation in NSCLC patients by using the standard SNP array(Affymetrix SNP 6.0).To indentify and characterize the transcriptome of tumor versus adjacent normal tissues by using RNA sequencing.",
+        "timeFrame": "2 years"
+      }
+    ],
+    "locations": null
+  },
+  {
+    "nct_id": "NCT04074447",
+    "brief_title": "The Efficacy of Immunodetection Point Inhibitors for Advanced Esophageal Cancer",
+    "official_title": "A Real World Study on the Efficacy of Immunodetection Point Inhibitors for Advanced Esophageal Cancer",
+    "study_type": "OBSERVATIONAL",
+    "phase": null,
+    "status": "UNKNOWN",
+    "conditions": [
+      "Esophageal Cancer"
+    ],
+    "summary": "Esophageal cancer is one of the most common malignancies of the digestive system. Esophageal squamous cell carcinoma is the main type of esophageal cancer, accounting for more than 90% of esophageal cancer in China. The 5-year survival rate is about 15%\\~25%. Many patients with esophageal cancer are initially diagnosed as advanced, and many patients with early initial diagnosis will still relapse and metastasis after radical treatment. Currently, chemotherapy plays a central role in palliative care, but its objective remission rate is only 20-40%, and the median survival is about 8-10 months. However, most of the current phase III studies on targeted drugs for esophageal squamous cell carcinoma have failed, and the treatment of esophageal squamous cell carcinoma has entered the bottleneck stage. Therefore, it is urgent to explore a treatment method that can significantly improve the prognosis of patients with esophageal cancer. In recent years, with the development of biological immunotherapy, immunocheckpoint inhibitors, including pd-1 inhibitors, pd-l1 inhibitors and ctla-4 inhibitors, have achieved significant curative effect and made breakthroughs in the treatment of multiple solid tumors including melanoma, non-small cell lung cancer and kidney cancer. These immunocheckpoint inhibitors have also been tried for esophageal cancer, with initial success in immunotherapy for esophageal cancer. In this observational study, all patients with esophageal cancer who used immunocheckpoint inhibitors in clinical practice were included, without limitation on the number of treatment lines or combinations of different chemotherapy. Through follow-up observation, the purpose of this study was to analyze the efficacy of immunocheckpoint inhibitors for esophageal cancer in the real world, and to explore the differences in the efficacy of immunocheckpoint inhibitors in different stages of treatment, as well as the efficacy of different chemotherapy combinations, so as to provide clinical evidence for the use of immunotherapy for advanced esophageal cancer.",
+    "sponsor": "Sun Yat-sen University",
+    "enrollment": 80,
+    "eligibility": "Inclusion Criteria:\n\n1. age above 18, male or female.\n2. patients with esophageal cancer confirmed by pathology through tumor biopsy or puncture tissue.\n3. the patient was assessed as untreatable by surgery.\n4. patients received second-line or third-line chemotherapy and were treated with immunodetector point inhibitors.\n5. the patient had complete preliminary pathological information, tumor site, pathological type and other information.\n6. the patient must have adequate tumor tissue or 5-10 FFPE white tablets to provide; After treatment, patients were returned to the hospital for re-examination every 3 treatment cycles, and plasma and peripheral blood samples could be obtained during the whole process.\n7. other indicators of the patients met the general clinical trial enrollment conditions.\n8. subjects read and fully understand the instructions to patients, and sign the informed consent.\n\nExclusion Criteria:\n\n1. blood samples cannot be obtained before treatment.\n2. the patient has clear infection status.\n3. the patient has other serious diseases besides esophageal cancer.\n\n(5) current patients with alcoholism or drug abuse. (6) pregnant female patients. (7) the patient has a clear history of neurological or mental disorders.",
+    "interventions": null,
+    "primary_outcomes": [
+      {
+        "measure": "The proportion of ctDNA content decreased in patients with good therapeutic effect",
+        "description": "The proportion of patients with good therapeutic effect whose serum ctDNA content decreased (in any follow-up\uff09",
+        "timeFrame": "through study completion, an average of 2 years"
+      }
+    ],
+    "locations": [
+      {
+        "facility": "Sun Yat-sen University Cancer Center",
+        "status": "RECRUITING",
+        "city": "Guangzhou",
+        "state": "Guangdong",
+        "zip": "510060",
+        "country": "China",
+        "contacts": [
+          {
+            "name": "Rui-Hua Xu, MD, PhD",
+            "role": "CONTACT",
+            "phone": "+862087342635",
+            "email": "lvzd@sysucc.org.cn"
+          },
+          {
+            "name": "Rui-hua Xu, MD, PhD",
+            "role": "PRINCIPAL_INVESTIGATOR"
+          },
+          {
+            "name": "Dongsheng Zhang, MD, PhD",
+            "role": "SUB_INVESTIGATOR"
+          }
+        ],
+        "geoPoint": {
+          "lat": 23.11667,
+          "lon": 113.25
+        }
+      }
+    ]
+  },
+  {
+    "nct_id": "NCT00165438",
+    "brief_title": "Pulmonary Function in Patients With Hodgkin's Disease Receiving Bleomycin-Based Chemotherapy",
+    "official_title": "A Prospective Study of Pulmonary Function in Patients With Hodgkin's Disease Receiving Bleomycin-Based Chemotherapy With or Without Mediastinal Irradiation",
+    "study_type": "OBSERVATIONAL",
+    "phase": null,
+    "status": "COMPLETED",
+    "conditions": [
+      "Hodgkin's Disease"
+    ],
+    "summary": "The purpose of this study is to find out the impact Bleomycin-containing chemotherapy, given with or without chest radiation therapy, on patients' lung function over time.",
+    "sponsor": "Dana-Farber Cancer Institute",
+    "enrollment": 60,
+    "eligibility": "Inclusion Criteria:\n\n* Patients with newly diagnosed classical Hodgkin's disease, with mediastinal involvement\n* Bleomycin-based chemotherapy alone or in combination with mediastinal irradiation\n\nExclusion Criteria:\n\n* Prior chest irradiation\n* Mediastinal irradiation received at an outside institution\n* Refractory or progressive disease on treatment",
+    "interventions": [
+      {
+        "type": "PROCEDURE",
+        "name": "Pulmonary Function Tests",
+        "description": "Tests include; total lung capacity, vital capacity, functional residual capacity, forced vital capacity, forced expiratory volume in 1 second, carbon monoxide diffusing capacity, pulse oximetry before and after a 6 minute walk and Pulmonary Status and Dyspnea Questionnaire"
+      },
+      {
+        "type": "PROCEDURE",
+        "name": "CAT Scan",
+        "description": "Obtained at different time points during the study depending upon standard of care chemotherapy treatment"
+      }
+    ],
+    "primary_outcomes": [
+      {
+        "measure": "Pulmonary function",
+        "description": "Changes in pulmonary function over time",
+        "timeFrame": "2 years"
+      }
+    ],
+    "locations": [
+      {
+        "facility": "Brigham and Women's Hospital",
+        "city": "Boston",
+        "state": "Massachusetts",
+        "zip": "02115",
+        "country": "United States",
+        "geoPoint": {
+          "lat": 42.35843,
+          "lon": -71.05977
+        }
+      },
+      {
+        "facility": "Dana-Farber Cancer Institute",
+        "city": "Boston",
+        "state": "Massachusetts",
+        "zip": "02115",
+        "country": "United States",
+        "geoPoint": {
+          "lat": 42.35843,
+          "lon": -71.05977
+        }
+      }
+    ]
+  },
+  {
+    "nct_id": "NCT02392455",
+    "brief_title": "VARGADO - Vargatef in 2nd-line Therapy of Non-Small Cell Lung Cancer (NSCLC)",
+    "official_title": "Vargatef in 2nd-line Therapy of Advanced or Metastatic Adenocarcinoma of the Lung",
+    "study_type": "OBSERVATIONAL",
+    "phase": null,
+    "status": "COMPLETED",
+    "conditions": [
+      "Carcinoma, Non-Small-Cell Lung"
+    ],
+    "summary": "This observational study will investigate the efficacy and tolerability of Vargatef (Nintedanib) plus docetaxel in daily routine second-line treatment in patients with locally advanced, metastatic or locally recurrent NSCLC. Treatment with Vargatef in eligible NSCLC patients, for whom the treating physician has decided to initiate treatment with Vargatef in second line according to the local label, will be observed for up to 24 months. Survial follow-up will be done until the end of the study.",
+    "sponsor": "Boehringer Ingelheim",
+    "enrollment": 817,
+    "eligibility": "Inclusion criteria:\n\n* age 18 or older\n* men and women locally advanced, metastastic and/or recurrent NSCLC with adenocarcinoma histology for which vargatef treatment is indicated according to Summary of Product Characteristics (SmPC)\n* after first line chemotherapy. This includes also combinations of immune- and chemotherapy.\n* standard 21-day-cycles docetaxel treatment according to SmPC possible\n* written informed consent\n\nExclusion criteria:\n\n* contraindications according to the SmPC of Vargatef or Docetaxel\n* more than one chemotherapy for treatment of NSCLC in palliative setting\n* current partcipation in a clinical trial\n* pregnancy\n* breastfeeding",
+    "interventions": [
+      {
+        "type": "DRUG",
+        "name": "treatment",
+        "description": "Docetaxel plus nintedanib until progression or intolerability",
+        "armGroupLabels": [
+          "A"
+        ]
+      }
+    ],
+    "primary_outcomes": [
+      {
+        "measure": "Percentage of patients alive one year after start of therapy with Vargatef and Docetaxel (1-year survival rate)",
+        "timeFrame": "up to 24 months"
+      }
+    ],
+    "locations": [
+      {
+        "city": "Multiple Locations",
+        "country": "Germany"
+      }
+    ]
+  },
+  {
+    "nct_id": "NCT04547855",
+    "brief_title": "Anlotinib Combined With Dose-dense Temozolomide for the First Recurrent or Progressive Glioblastoma After STUPP Regimen",
+    "official_title": "A Phase II Study of Anlotinib Combined With Dose-dense Temozolomide for the First Recurrent or Progressive Glioblastoma After STUPP Regimen",
+    "study_type": "INTERVENTIONAL",
+    "phase": [
+      "PHASE2"
+    ],
+    "status": "UNKNOWN",
+    "conditions": [
+      "Glioblastoma"
+    ],
+    "summary": "Currently,6 cycles of Temozolomide adjuvant chemotherapy after concurrent radiotherapy and Temozolomide chemotherapy(STUPP regimen)for newly diagnosed postoperative GBM can increase the 2-year and 5-year overall survival rates of patients to 26.5% and 9.8%, respectively. However, most patients are still unable to avoid tumor recurrence and death.Anlotinib is an efficient multi-target tyrosine kinase inhibitor (TKI) that effectively block the migration and proliferation of endothelial cells and reduce tumor microvascular density by targeting VEGFRs, FGFRs, PDGFRs. It has been proved to be safe and effective in advanced lung cancer(including NSCLC,SCLC)after second-line standard chemotherapy failure,and advanced soft tissue sarcoma after anthracycline-containing chemotherapy failure.Here, we prepared to evaluate whether the combination of dose-dense Temozolomide and Anlotinib can preferably improved survival of the first recurrent or progressive GBM after STUPP regimen.",
+    "sponsor": "Yonggao Mou",
+    "enrollment": 54,
+    "eligibility": "Inclusion Criteria:\n\n1. The primary tumor must be pathologically confirmed as supratentorial glioblastoma;\n2. The primary tumor progressed or relapsed for the first time after surgery (including biopsy, partial resection, total resection), standard radiotherapy and temozolomide concurrent chemotherapy and temozolomide adjuvant chemotherapy (STUPP regimen), including multiple intracranial recurrence and new lesions.;\n3. Age \u2265 18 years old,\u226475 years old;\n4. KPS \u2265 60;\n5. the expected survival time is more than 12 weeks;\n6. within 28 days before entering the group, patients need to undergo craniocerebral enhanced MRI, and the lesions on MRI must be measurable;\n7. for patients undergoing the second surgery after the first recurrence, baseline MRI should be obtained at least 4 weeks after operation;\n8. if the patient is undergoing hormone therapy, the hormone dose must be stable or reduced at least 5 days before baseline MRI;\n9. For patients undergoing re-radiation therapy, the baseline MRI should be obtained at least 8 weeks or 4 weeks after the end of the radiotherapy (the recurrence lesion is not in the radiation field);\n10. For patients who are treated with gamma knife or other hyperdivision methods for the first time, Recurrence or progression must be confirmed by pathology (except for patients with new lesions);\n11. Peripheral blood picture, liver and kidney function, etc. are within the following allowable range (detected within 7 days before the start of treatment): neutrophils (ANC) \u2265 1.5\u00d7109/L; hemoglobin (HGB) \u2265100g/L; platelets (PLT) \u2265100\u00d7109/L; liver transaminase (AST/ALT) \u22642.5 times the upper limit of the normal range; total bilirubin (TBIL) \\<1.5 times the upper limit of the normal range; Creatinine (CREAT) \\<1.2 times the upper limit of the normal range; International normalized ratio (INR) \\<1.5; Activated partial thromboplastin time (APTT) \\<1.5 times the upper limit of the normal range (except for patients receiving anticoagulation therapy); Urinary protein (PRO)/creatinine (CRE) ratio \u22641.0;\n12. The patient must have fully recovered from the toxicity of previous chemotherapy or targeted therapy, and at least 30 days from the last treatment; 13.Before starting treatment, the patient must Complete recovery from surgery, postoperative infection or other comorbidities;\n\n14.Patients of childbearing age (including female and male patients' female partners) must take effective birth control measures; 15.Sign informed consent.\n\nExclusion Criteria:\n\n* 1.Patients who have participated in other clinical trials in the past and have not terminated the trial; 2.Patients who have used Anlotinib in the past; 3. Baseline MRI suggests the recent risk of cerebral hemorrhage or brain herniation; 4. Pregnant or breast-feeding women; 5.Those who are difficult to control acute infections; 6. People who take drugs, drug abuse, long-term alcoholism and AIDS; 7.Have frequent vomiting or have conditions that affect the oral administration of drugs; 8. Hypertension that cannot be controlled by drugs The patient (\\>150/100mmHg); 9. Previous hypertensive encephalopathy; 10. Hemorrhage tendency or coagulopathy; 11. Thrombolytic or anticoagulant therapy (unless low molecular weight heparin or warfarin is used); 12).\u2265 Grade 2 cardiac insufficiency (NYHA criteria) or congestive heart failure; 13. Past history of myocardial infarction or unstable angina, stroke and transient ischemic attack within 6 months; 14. Serious vascular disease; 15.Peripheral artery embolism occurred recently; 16. Abdominal fistula, gastrointestinal perforation and abdominal abscess occurred in the past; 17.Intracranial abscess occurred within 6 months; 18. Major surgery, open biopsy or Have suffered major trauma; 19. Those who are expected to undergo major surgery; 20).Those who have severe incurable wounds, ulcers or fractures; 21).Those with a history of pulmonary fibrosis, interstitial pneumonia, pneumoconiosis, radiation pneumonia, drug-related pneumonia, severely impaired lung function, etc.; 22.patients who are allergic to known ingredients of Anlotinib; 23.There is a serious skin disease; 24. Other concomitant diseases that seriously endanger the safety of patients or affect the completion of the study according to the judgment of the investigator .",
+    "interventions": [
+      {
+        "type": "DRUG",
+        "name": "anlotinib combined with dose-dense temozolomide",
+        "description": "Temozolomide Capsule 150mg, p.o., qd, d1-7,15-21,4 weeks one cycle; Anlotinib hydrochloride capsule 12mg, p.o., qd, D1-D14; 3 weeks one cycle.",
+        "armGroupLabels": [
+          "experimental group"
+        ],
+        "otherNames": [
+          "Anlotinib hydrochloride capsule"
+        ]
+      }
+    ],
+    "primary_outcomes": [
+      {
+        "measure": "6 months Objective Response Rates",
+        "description": "Percentage of Participants With Objective Response (Partial Response \\[PR\\] Plus Complete Response \\[CR\\]), as Assessed Using as Assessed by Investigator Using RANO Version 1.1",
+        "timeFrame": "6 month"
+      },
+      {
+        "measure": "6 months Progression-Free Survival Rates",
+        "description": "6 months Progression-Free Survival Rates as Assessed by Investigator Using RANO Version 1.1",
+        "timeFrame": "6 months"
+      }
+    ],
+    "locations": [
+      {
+        "facility": "Sun Yat-sen University Cancer Center",
+        "status": "RECRUITING",
+        "city": "Guangzhou",
+        "state": "Guangdong",
+        "zip": "510000",
+        "country": "China",
+        "contacts": [
+          {
+            "name": "QUN-YING YANG, MD",
+            "role": "CONTACT",
+            "phone": "13802971439",
+            "email": "yangqy@sysucc.org.cn"
+          }
+        ],
+        "geoPoint": {
+          "lat": 23.11667,
+          "lon": 113.25
+        }
+      }
+    ]
+  }
+]
