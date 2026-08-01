@@ -9,5 +9,6 @@ class Settings:
     DB_NAME = os.getenv("DB_NAME", "triallens")
     DB_USER = os.getenv("DB_USER", "postgres")
     DB_PASSWORD = os.getenv("DB_PASSWORD", "postgres")
-
+    GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+    
 settings = Settings()

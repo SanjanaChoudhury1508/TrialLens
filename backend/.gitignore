@@ -39,3 +39,7 @@ htmlcov/
 
 .vscode/
 .idea/
+
+data/pdfs/
+
+chroma/
