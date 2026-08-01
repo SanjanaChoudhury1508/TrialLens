@@ -34,3 +34,18 @@ class SemanticChunker:
             )
 
         return chunks
+    def chunk_text(self, text, chunk_size=600, overlap=100):
+
+        chunks = []
+
+        start = 0
+
+        while start < len(text):
+
+            end = min(start + chunk_size, len(text))
+
+            chunks.append(text[start:end])
+
+            start += chunk_size - overlap
+
+        return chunks
