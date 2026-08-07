@@ -1,50 +1,59 @@
-import uuid
-
 from app.chunk_models import DocumentChunk
-from app.document_structure import ParsedDocument
+import uuid
 
 
 class SemanticChunker:
+    """
+    Chunk a DoclingDocument by splitting its exported markdown.
+    """
 
-    def chunk(
+    def chunk(self, document):
+
+        # Export the parsed document as Markdown
+        markdown = document.export_to_markdown()
+
+        return self.chunk_markdown(markdown)
+
+    def chunk_markdown(
         self,
-        document: ParsedDocument,
+        markdown: str,
+        chunk_size: int = 1000,
+        overlap: int = 200,
     ) -> list[DocumentChunk]:
 
         chunks = []
 
-        for section in document.sections:
-
-            text = section.text.strip()
-
-            if not text:
-                continue
-
-            chunks.append(
-                DocumentChunk(
-                    chunk_id=str(uuid.uuid4()),
-                    document_id=document.document_id,
-                    section=section.title,
-                    text=text,
-                    page=section.page,
-                    metadata={
-                        "level": section.level
-                    }
-                )
-            )
-
-        return chunks
-    def chunk_text(self, text, chunk_size=600, overlap=100):
-
-        chunks = []
-
         start = 0
+        chunk_number = 1
 
-        while start < len(text):
+        while start < len(markdown):
 
-            end = min(start + chunk_size, len(text))
+            end = min(start + chunk_size, len(markdown))
 
-            chunks.append(text[start:end])
+            text = markdown[start:end].strip()
+
+            if text:
+
+                chunks.append(
+
+                    DocumentChunk(
+
+                        chunk_id=str(uuid.uuid4()),
+
+                        document_id="",
+
+                        section=f"chunk_{chunk_number}",
+
+                        text=text,
+
+                        page=1,
+
+                        metadata={},
+                    )
+
+                )
+
+                chunk_number += 1
 
             start += chunk_size - overlap
 
