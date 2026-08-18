@@ -8,7 +8,8 @@ from app.services.rag_pipeline import RAGPipeline
 rag = RAGPipeline()
 
 response = rag.ask(
-    "What breast cancer immunotherapy trials are available?"
+    "What were the coprimary endpoints of the A-BRAVE trial "
+    "of avelumab in high-risk early triple-negative breast cancer?"
 )
 
 print("\nAnswer\n")
