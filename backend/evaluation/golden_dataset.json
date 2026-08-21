@@ -1,0 +1,32 @@
+[
+  {
+    "id": "q1",
+    "question": "What were the coprimary endpoints of the A-BRAVE trial?",
+    "expected_answer": "Disease-free survival (DFS) in the intention-to-treat (ITT) population and disease-free survival in the stratum B population.",
+    "required_source": "NCT02926196"
+  },
+  {
+    "id": "q2",
+    "question": "What treatment was evaluated in the A-BRAVE trial?",
+    "expected_answer": "One year of adjuvant avelumab versus observation.",
+    "required_source": "NCT02926196"
+  },
+  {
+    "id": "q3",
+    "question": "Which patients were included in stratum B of the A-BRAVE trial?",
+    "expected_answer": "Patients with invasive residual disease in the breast and/or nodes after neoadjuvant chemotherapy.",
+    "required_source": "NCT02926196"
+  },
+  {
+    "id": "q4",
+    "question": "Did avelumab significantly improve disease-free survival in the A-BRAVE trial?",
+    "expected_answer": "No. Avelumab did not significantly improve disease-free survival.",
+    "required_source": "NCT02926196"
+  },
+  {
+    "id": "q5",
+    "question": "What was the overall survival hazard ratio reported for avelumab in the A-BRAVE trial?",
+    "expected_answer": "The reported hazard ratio for overall survival was 0.66.",
+    "required_source": "NCT02926196"
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "q1",
+    "question": "What were the coprimary endpoints of the A-BRAVE trial?",
+    "answer_correct": true,
+    "source_correct": true,
+    "answer": "The coprimary endpoints of the A-BRAVE trial (NCT02926196), as modified after an amendment in January 2020, were:\n\n1.  Disease-free survival (DFS) of patients randomly assigned to avelumab compared with control in the whole intention-to-treat (ITT) population.\n2.  DFS of patients randomly assigned to avelumab compared with control in stratum B, which includes patients with invasive residual disease (breast and/or nodes) after neoadjuvant chemotherapy.",
+    "sources": [
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF"
+      }
+    ]
+  },
+  {
+    "id": "q2",
+    "question": "What treatment was evaluated in the A-BRAVE trial?",
+    "answer_correct": true,
+    "source_correct": true,
+    "answer": "The A-BRAVE trial (NCT02926196) evaluated avelumab, an anti-programmed death-ligand 1 (PD-L1) antibody, as adjuvant treatment for patients with high-risk early triple-negative breast cancer (TNBC). Patients were randomly assigned to receive 1 year of avelumab versus observation, following the completion of standard surgery and (neo)adjuvant chemotherapy.",
+    "sources": [
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF"
+      }
+    ]
+  },
+  {
+    "id": "q3",
+    "question": "Which patients were included in stratum B of the A-BRAVE trial?",
+    "answer_correct": true,
+    "source_correct": true,
+    "answer": "Patients included in stratum B of the A-BRAVE trial were those with invasive residual disease (breast and/or nodes) after neoadjuvant chemotherapy (NCT02926196, Clinical PDF).",
+    "sources": [
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF"
+      }
+    ]
+  },
+  {
+    "id": "q4",
+    "question": "Did avelumab significantly improve disease-free survival in the A-BRAVE trial?",
+    "answer_correct": true,
+    "source_correct": true,
+    "answer": "No, avelumab did not significantly improve disease-free survival (DFS) in the A-BRAVE trial (NCT02926196). The trial's primary endpoint, DFS with avelumab versus control, was not statistically significant for patients with triple-negative breast cancer (TNBC) at high risk of relapse, with a Hazard Ratio (HR) of 0.81. These results were consistent in both the intention-to-treat (ITT) population and patients with invasive residual disease (iRD) after neoadjuvant chemotherapy (Clinical PDF, NCT02926196).",
+    "sources": [
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF"
+      }
+    ]
+  },
+  {
+    "id": "q5",
+    "question": "What was the overall survival hazard ratio reported for avelumab in the A-BRAVE trial?",
+    "answer_correct": true,
+    "source_correct": true,
+    "answer": "In the A-BRAVE trial (NCT02926196), a descriptive analysis of the secondary endpoint overall survival (OS) reported a hazard ratio (HR) of 0.66 (95% CI 0.45-0.97) for avelumab versus control in the intention-to-treat (ITT) population. This was associated with a reduction in the hazard of death.",
+    "sources": [
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF"
+      }
+    ]
+  }
+]
