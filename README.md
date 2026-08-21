@@ -1,7 +1,7 @@
 # TrialLens – Multi-Agent Clinical Trial Intelligence Copilot
 > **Current Version:** v0.4.0 (Metadata RAG Complete)
 >
-> TrialLens currently supports metadata-based Retrieval-Augmented Generation (RAG) using ClinicalTrials.gov data, PostgreSQL + pgvector, and Gemini 2.5 Flash. PDF ingestion, Hybrid Retrieval, and LangGraph orchestration are under active development.
+> TrialLens currently supports metadata-based Retrieval-Augmented Generation (RAG) using ClinicalTrials.gov data, PostgreSQL + pgvector, and Gemini 3.6 Flash. PDF ingestion, Hybrid Retrieval, and LangGraph orchestration are under active development.
 
 TrialLens is an AI-powered clinical trial intelligence system that combines structured clinical trial metadata, adverse event reports, and unstructured clinical documents to provide citation-backed answers to complex research questions.
 
@@ -72,7 +72,7 @@ TrialLens uses publicly available datasets.
  Retrieval Service                   Prompt Builder
         │                                     │
         ▼                                     ▼
-Embedding Service                     Gemini 2.5 Flash
+Embedding Service                     Gemini 3.6 Flash
         │
         ▼
  PostgreSQL + pgvector
@@ -268,7 +268,7 @@ Coming soon.
 - Semantic similarity search
 - Retrieval Service
 - Prompt Builder
-- Gemini 2.5 Flash integration
+- Gemini 3.6 Flash integration
 - Retrieval-Augmented Generation (RAG) pipeline
 - Source-aware AI responses with NCT trial IDs
 
