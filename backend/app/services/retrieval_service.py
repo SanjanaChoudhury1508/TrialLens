@@ -1,20 +1,24 @@
 from app.services.embedding_service import EmbeddingService
 from app.database.vector_store import VectorStore
+from app.services.reranker import Reranker
 
 
 class RetrievalService:
     """
     Hybrid retrieval service.
 
-    Combines:
+    Pipeline:
+
         1. Dense vector similarity search
         2. PostgreSQL keyword search
-
-    using Reciprocal Rank Fusion (RRF).
+        3. Reciprocal Rank Fusion (RRF)
+        4. Cross-encoder reranking
+        5. Return final top-k results
     """
 
     def __init__(self):
 
+        self.reranker = Reranker()
         self.embedder = EmbeddingService()
         self.store = VectorStore()
 
@@ -25,6 +29,12 @@ class RetrievalService:
     ):
 
         # -------------------------------------------------
+        # Number of candidates retrieved BEFORE reranking
+        # -------------------------------------------------
+
+        candidate_k = max(top_k * 4, 20)
+
+        # -------------------------------------------------
         # 1. VECTOR SEARCH
         # -------------------------------------------------
 
@@ -32,7 +42,7 @@ class RetrievalService:
 
         vector_results = self.store.search(
             embedding,
-            top_k=top_k * 2,
+            top_k=candidate_k,
         )
 
         # -------------------------------------------------
@@ -41,7 +51,7 @@ class RetrievalService:
 
         keyword_results = self.store.keyword_search(
             question,
-            top_k=top_k * 2,
+            top_k=candidate_k,
         )
 
         # -------------------------------------------------
@@ -91,7 +101,7 @@ class RetrievalService:
             )
 
         # -------------------------------------------------
-        # 4. SORT BY FUSED SCORE
+        # 4. SORT BY RRF SCORE
         # -------------------------------------------------
 
         ranked = sorted(
@@ -101,20 +111,34 @@ class RetrievalService:
         )
 
         # -------------------------------------------------
-        # 5. RETURN TOP-K
+        # 5. BUILD RERANKING CANDIDATES
         # -------------------------------------------------
 
-        results = []
+        candidates = []
 
-        for item in ranked[:top_k]:
+        for item in ranked[:candidate_k]:
 
             result = item["result"].copy()
 
             result["rrf_score"] = item["rrf_score"]
 
-            results.append(result)
+            candidates.append(result)
 
-        return results
+        # -------------------------------------------------
+        # 6. CROSS-ENCODER RERANKING
+        # -------------------------------------------------
+
+        reranked = self.reranker.rerank(
+            question=question,
+            results=candidates,
+            top_k=top_k,
+        )
+
+        # -------------------------------------------------
+        # 7. RETURN FINAL RESULTS
+        # -------------------------------------------------
+
+        return reranked
 
     @staticmethod
     def _chunk_key(result):
