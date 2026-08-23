@@ -1,14 +1,14 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 
 interface Source {
   document_id: string;
-  trial_id: string | null;
+  trial_id: string;
   source_type: string;
-  section?: string;
-  content?: string;
-  relevance_score?: number;
+  section: string;
+  content: string;
+  relevance_score: number;
 }
 
 interface AskResponse {
@@ -17,223 +17,392 @@ interface AskResponse {
   sources: Source[];
 }
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+
+const EXAMPLE_QUESTIONS = [
+  "What were the coprimary endpoints of the A-BRAVE trial?",
+  "What treatment was evaluated in the A-BRAVE trial?",
+  "Did avelumab significantly improve disease-free survival?",
+  "What was the overall survival hazard ratio?",
+];
+
+const LOADING_STEPS = [
+  "Searching clinical evidence…",
+  "Reranking relevant sources…",
+  "Generating evidence-grounded answer…",
+];
+
+function formatSourceType(sourceType: string): string {
+  return sourceType.replace(/[_-]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function formatDocumentName(documentId: string): string {
+  return documentId.replace(/[_-]/g, " ");
+}
+
+/** Grows the textarea to fit its content (capped), instead of always reserving a
+ *  fixed number of rows — keeps the box compact for short questions. */
+function autoResizeTextarea(el: HTMLTextAreaElement) {
+  el.style.height = "auto";
+  el.style.height = `${Math.min(el.scrollHeight, 200)}px`;
+}
+
+/** Renders answer text, turning numbered/bulleted plain-text lines into real lists. */
+function AnswerBody({ text }: { text: string }) {
+  const blocks = text.trim().split(/\n\s*\n/);
+
+  return (
+    <div className="space-y-4 text-[1.05rem] leading-[1.75] text-ink">
+      {blocks.map((block, i) => {
+        const lines = block
+          .split("\n")
+          .map((l) => l.trim())
+          .filter(Boolean);
+        const isNumbered = lines.length > 1 && lines.every((l) => /^\d+[.)]\s+/.test(l));
+        const isBulleted = lines.length > 1 && lines.every((l) => /^[-*•]\s+/.test(l));
+
+        if (isNumbered) {
+          return (
+            <ol key={i} className="list-decimal space-y-2 pl-5 marker:font-medium marker:text-accent">
+              {lines.map((l, j) => (
+                <li key={j}>{l.replace(/^\d+[.)]\s+/, "")}</li>
+              ))}
+            </ol>
+          );
+        }
+        if (isBulleted) {
+          return (
+            <ul key={i} className="list-disc space-y-2 pl-5 marker:text-accent">
+              {lines.map((l, j) => (
+                <li key={j}>{l.replace(/^[-*•]\s+/, "")}</li>
+              ))}
+            </ul>
+          );
+        }
+        return <p key={i}>{block}</p>;
+      })}
+    </div>
+  );
+}
+
+/**
+ * Displays the raw cross-encoder reranker score (cross-encoder/ms-marco-MiniLM-L-6-v2).
+ * This is NOT a probability or percentage — it's an unbounded relevance score — so it
+ * is shown as-is, never normalized into a percentage or a progress bar.
+ */
+function ScoreBadge({ score }: { score: number }) {
+  return (
+    <span
+      className="shrink-0 font-mono text-sm font-semibold text-ink-soft"
+      title="Reranker score (cross-encoder/ms-marco-MiniLM-L-6-v2)"
+    >
+      {score.toFixed(2)}
+    </span>
+  );
+}
+
+function EvidenceCard({
+  source,
+  index,
+  isExpanded,
+  onToggle,
+}: {
+  source: Source;
+  index: number;
+  isExpanded: boolean;
+  onToggle: () => void;
+}) {
+  const preview = source.content.length > 160 ? `${source.content.slice(0, 160).trim()}…` : source.content;
+  const panelId = `evidence-panel-${index}`;
+  const hasScore = typeof source.relevance_score === "number" && !Number.isNaN(source.relevance_score);
+
+  return (
+    <li className="relative pl-9">
+      <span
+        className="absolute left-0 top-1 flex h-7 w-7 items-center justify-center rounded-full border border-border-strong bg-surface font-mono text-xs font-medium text-ink-soft"
+        aria-hidden="true"
+      >
+        {index + 1}
+      </span>
+      <div className="rounded-xl border border-border bg-surface p-4 transition-shadow hover:shadow-md">
+        {/* Document name is repeated across many chunks from the same source, so it
+            stays visually secondary to the trial ID — but readable, not near-invisible. */}
+        <p className="mb-1.5 truncate text-xs text-ink-soft" title={formatDocumentName(source.document_id)}>
+          {formatDocumentName(source.document_id)}
+        </p>
+
+        {/* Trial ID + source type are the differentiating identifiers, so they carry
+            the most visual weight in the card header. */}
+        <div className="mb-2 flex flex-wrap items-baseline gap-x-1.5 font-mono text-sm">
+          <span className="font-semibold text-ink">{source.trial_id}</span>
+          <span aria-hidden="true" className="text-ink-faint">·</span>
+          <span className="text-ink-soft">{formatSourceType(source.source_type)}</span>
+        </div>
+
+        {source.section && (
+          <p className="mb-3 inline-block rounded bg-accent-soft px-2 py-0.5 text-[0.7rem] font-semibold uppercase tracking-wide text-accent-strong">
+            {source.section}
+          </p>
+        )}
+
+        <div id={panelId} className="whitespace-pre-line text-sm leading-relaxed text-ink-soft">
+          {isExpanded ? source.content : preview}
+        </div>
+
+        <div className="mt-3 flex items-center justify-between gap-3">
+          <button
+            type="button"
+            onClick={onToggle}
+            aria-expanded={isExpanded}
+            aria-controls={panelId}
+            className="focus-ring inline-flex items-center gap-1 rounded text-sm font-medium text-accent hover:text-accent-strong"
+          >
+            {isExpanded ? "Hide evidence" : "View evidence"}
+            <span aria-hidden="true" className={`inline-block transition-transform ${isExpanded ? "rotate-90" : ""}`}>
+              →
+            </span>
+          </button>
+          {hasScore && <ScoreBadge score={source.relevance_score} />}
+        </div>
+      </div>
+    </li>
+  );
+}
+
 export default function Home() {
   const [question, setQuestion] = useState("");
+  const [submittedQuestion, setSubmittedQuestion] = useState("");
   const [result, setResult] = useState<AskResponse | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [loadingStep, setLoadingStep] = useState(0);
+  const [expanded, setExpanded] = useState<Record<number, boolean>>({});
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  useEffect(() => {
+    if (!isLoading) return;
+    setLoadingStep(0);
+    const id = setInterval(() => {
+      setLoadingStep((s) => (s + 1) % LOADING_STEPS.length);
+    }, 1500);
+    return () => clearInterval(id);
+  }, [isLoading]);
 
-    if (!question.trim()) return;
+  useEffect(() => {
+    if (textareaRef.current) autoResizeTextarea(textareaRef.current);
+  }, [question]);
 
-    setLoading(true);
-    setError("");
-    setResult(null);
+  async function askQuestion(rawQuestion: string) {
+    const trimmed = rawQuestion.trim();
+    if (!trimmed || isLoading) return;
+
+    setIsLoading(true);
+    setError(null);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/ask", {
+      const res = await fetch(`${API_URL}/ask`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          question: question.trim(),
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question: trimmed }),
       });
 
-      if (!response.ok) {
-        throw new Error(`Request failed: ${response.status}`);
+      if (!res.ok) {
+        throw new Error(`Request failed with status ${res.status}`);
       }
 
-      const data: AskResponse = await response.json();
+      const data: AskResponse = await res.json();
       setResult(data);
-    } catch (err) {
-      console.error(err);
-      setError(
-        "Unable to connect to TrialLens. Make sure the backend is running."
-      );
+      setSubmittedQuestion(trimmed);
+      setExpanded({});
+    } catch {
+      setError("TrialLens couldn't retrieve an answer right now. Check that the backend is running and try again.");
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   }
 
-  return (
-    <main className="min-h-screen bg-[#f7f8fa] text-slate-900">
-      {/* Header */}
-      <header className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <div>
-            <h1 className="text-2xl font-bold tracking-tight text-slate-900">
-              TrialLens
-            </h1>
-            <p className="text-sm text-slate-500">
-              Citation-grounded clinical trial research assistant
-            </p>
-          </div>
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    askQuestion(question);
+  }
 
-          <div className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-xs font-medium text-slate-600">
-            Clinical Research AI
+  function handleExampleClick(example: string) {
+    setQuestion(example);
+    textareaRef.current?.focus();
+  }
+
+  const hasResult = !!result && !isLoading;
+
+  return (
+    <div className="min-h-screen bg-bg font-sans text-ink antialiased">
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+
+      <header className="sticky top-0 z-30 border-b border-border bg-surface/95 backdrop-blur supports-[backdrop-filter]:bg-surface/80">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <span className="font-display text-xl font-semibold tracking-tight text-ink">TrialLens</span>
+            <span className="hidden text-sm text-ink-faint sm:inline">
+              Citation-grounded clinical trial research assistant
+            </span>
           </div>
+          <span className="inline-flex shrink-0 items-center rounded-full border border-accent/20 bg-accent-soft px-3 py-1 font-mono text-[0.7rem] font-medium uppercase tracking-wide text-accent-strong">
+            Clinical Research AI
+          </span>
         </div>
       </header>
 
-      {/* Main */}
-      <section className="mx-auto max-w-4xl px-6 py-16">
-        {/* Hero */}
-        <div className="mb-10 text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-blue-600">
+      <main id="main-content" className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
+        <section className="mb-6 max-w-2xl lg:mb-8">
+          <p className="mb-3 font-mono text-xs font-semibold uppercase tracking-widest text-accent">
             Evidence-based research
           </p>
-
-          <h2 className="text-4xl font-bold tracking-tight text-slate-900">
+          <h1 className="font-display text-3xl font-semibold leading-tight text-ink sm:text-4xl">
             Ask questions about clinical trials.
-          </h2>
-
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-500">
-            Search across indexed clinical trial documents and receive
-            answers grounded in retrieved evidence.
+          </h1>
+          <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            Search across indexed clinical trial documents and receive answers grounded in retrieved evidence, with
+            every claim traceable to its source.
           </p>
-        </div>
+        </section>
 
-        {/* Search box */}
-        <form
-          onSubmit={handleSubmit}
-          className="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm"
-        >
-          <textarea
-            value={question}
-            onChange={(event) => setQuestion(event.target.value)}
-            placeholder="Ask something like: What were the coprimary endpoints of the A-BRAVE trial?"
-            rows={4}
-            className="w-full resize-none rounded-xl border-0 bg-transparent px-4 py-3 text-base outline-none placeholder:text-slate-400"
-          />
+        <section aria-label="Ask TrialLens a question" className="mb-12">
+          <form
+            onSubmit={handleSubmit}
+            className="rounded-2xl border border-border bg-surface p-3 shadow-sm sm:p-4"
+          >
+            <label htmlFor="question" className="sr-only">
+              Your clinical research question
+            </label>
+            <textarea
+              id="question"
+              ref={textareaRef}
+              value={question}
+              onChange={(e) => setQuestion(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  askQuestion(question);
+                }
+              }}
+              placeholder="e.g. What were the coprimary endpoints of the A-BRAVE trial?"
+              rows={2}
+              disabled={isLoading}
+              className="focus-ring w-full resize-none overflow-y-auto rounded-lg bg-transparent p-2 text-base leading-relaxed text-ink placeholder:text-ink-faint disabled:opacity-60"
+            />
+            <div className="flex flex-col-reverse items-start justify-between gap-3 border-t border-border px-2 pt-3 sm:flex-row sm:items-center">
+              <p className="text-xs text-ink-faint">Answers are generated from indexed evidence, not general knowledge.</p>
+              <button
+                type="submit"
+                disabled={isLoading || !question.trim()}
+                className="focus-ring inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-strong disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
+              >
+                {isLoading ? (
+                  <>
+                    <span
+                      className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-white/40 border-t-white"
+                      aria-hidden="true"
+                    />
+                    Searching…
+                  </>
+                ) : (
+                  "Ask TrialLens"
+                )}
+              </button>
+            </div>
+          </form>
 
-          <div className="flex items-center justify-between border-t border-slate-100 px-2 pt-3">
-            <span className="text-xs text-slate-400">
-              Answers are generated from indexed evidence.
-            </span>
-
-            <button
-              type="submit"
-              disabled={loading || !question.trim()}
-              className="rounded-xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-slate-300"
-            >
-              {loading ? "Researching..." : "Ask TrialLens"}
-            </button>
-          </div>
-        </form>
-
-        {/* Error */}
-        {error && (
-          <div className="mt-6 rounded-xl border border-red-200 bg-red-50 px-5 py-4 text-sm text-red-700">
-            {error}
-          </div>
-        )}
-
-        {/* Loading */}
-        {loading && (
-          <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-8 text-center">
-            <div className="mx-auto mb-4 h-7 w-7 animate-spin rounded-full border-2 border-slate-200 border-t-blue-600" />
-            <p className="text-sm font-medium text-slate-700">
-              Searching clinical evidence...
+          {isLoading && (
+            <p role="status" aria-live="polite" className="mt-3 text-sm text-ink-faint">
+              {LOADING_STEPS[loadingStep]}
             </p>
-            <p className="mt-1 text-xs text-slate-400">
-              Retrieving, reranking and generating an evidence-grounded answer
-            </p>
-          </div>
-        )}
+          )}
 
-        {/* Answer */}
-        {result && !loading && (
-          <div className="mt-10 space-y-6">
-            <section className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
-              <div className="mb-5 flex items-center justify-between">
-                <h3 className="text-lg font-bold text-slate-900">
-                  Answer
-                </h3>
+          {error && (
+            <div role="alert" className="mt-4 rounded-xl border border-danger/20 bg-danger-soft px-4 py-3 text-sm">
+              <p className="font-medium text-danger">Something went wrong</p>
+              <p className="mt-1 text-danger/90">{error}</p>
+              <button
+                type="button"
+                onClick={() => askQuestion(question)}
+                className="focus-ring mt-2 inline-flex items-center rounded text-sm font-medium text-danger underline underline-offset-2"
+              >
+                Try again
+              </button>
+            </div>
+          )}
+        </section>
 
-                <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-700">
+        {hasResult && result && (
+          <section className="grid gap-8 lg:grid-cols-[minmax(0,1.7fr)_minmax(300px,1fr)] lg:items-start">
+            <div className="animate-fade-up rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-6">
+              <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-border pb-3">
+                <h2 className="font-display text-xl font-semibold text-ink">Answer</h2>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-trust-soft px-3 py-1 text-xs font-medium text-trust">
+                  <span className="h-1.5 w-1.5 rounded-full bg-trust" aria-hidden="true" />
                   Evidence grounded
                 </span>
               </div>
+              <p className="mb-3 text-sm text-ink-faint">{submittedQuestion}</p>
+              <AnswerBody text={result.answer} />
+            </div>
 
-              <div className="whitespace-pre-wrap text-[15px] leading-7 text-slate-700">
-                {result.answer}
-              </div>
-            </section>
-
-            {/* Sources */}
-            <section>
+            {/* Heading/description stay put; only the card list beneath scrolls, so a
+                long source list never stretches the page and leaves a tall blank gap
+                next to a shorter answer. On mobile/tablet (below lg) this is just a
+                normal block flowing beneath the answer, full width, no scroll container. */}
+            <div className="lg:sticky lg:top-24">
               <div className="mb-4">
-                <h3 className="text-lg font-bold text-slate-900">
-                  Sources
-                </h3>
-                <p className="mt-1 text-sm text-slate-500">
-                  Evidence retrieved from the TrialLens knowledge base.
+                <h2 className="mb-1 font-display text-lg font-semibold text-ink">Sources</h2>
+                <p className="text-sm text-ink-faint">Evidence retrieved from the TrialLens knowledge base.</p>
+              </div>
+
+              {result.sources.length > 0 ? (
+                <div className="sources-rail lg:max-h-[calc(100vh-14rem)] lg:overflow-y-auto lg:pr-1">
+                  <ul className="evidence-rail space-y-3">
+                    {result.sources.map((source, i) => (
+                      <EvidenceCard
+                        key={`${source.document_id}-${i}`}
+                        source={source}
+                        index={i}
+                        isExpanded={!!expanded[i]}
+                        onToggle={() => setExpanded((prev) => ({ ...prev, [i]: !prev[i] }))}
+                      />
+                    ))}
+                  </ul>
+                </div>
+              ) : (
+                <p className="rounded-xl border border-border bg-surface-muted p-4 text-sm text-ink-faint">
+                  No supporting evidence was returned for this answer.
                 </p>
-              </div>
-
-              <div className="space-y-4">
-                {result.sources.map((source, index) => (
-                  <details
-                    key={`${source.document_id}-${source.section}-${index}`}
-                    className="group rounded-2xl border border-slate-200 bg-white shadow-sm"
-                  >
-                    <summary className="cursor-pointer list-none px-6 py-5">
-                      <div className="flex items-start justify-between gap-4">
-                        <div>
-                          <p className="text-sm font-semibold text-slate-900">
-                            {source.document_id}
-                          </p>
-
-                          <div className="mt-2 flex flex-wrap gap-2">
-                            {source.trial_id && (
-                              <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">
-                                {source.trial_id}
-                              </span>
-                            )}
-
-                            <span className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-600">
-                              {source.source_type}
-                            </span>
-                          </div>
-                        </div>
-
-                        <span className="text-xs text-slate-400">
-                          Evidence {index + 1}
-                        </span>
-                      </div>
-
-                      {source.section && (
-                        <p className="mt-4 text-sm font-medium text-slate-600">
-                          {source.section}
-                        </p>
-                      )}
-                    </summary>
-
-                    {source.content && (
-                      <div className="border-t border-slate-100 px-6 py-5">
-                        <p className="text-sm leading-6 text-slate-600">
-                          {source.content}
-                        </p>
-                      </div>
-                    )}
-                  </details>
-                ))}
-              </div>
-            </section>
-          </div>
+              )}
+            </div>
+          </section>
         )}
-      </section>
 
-      {/* Footer */}
-      <footer className="border-t border-slate-200 bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-6 text-center text-xs text-slate-400">
-          TrialLens · Citation-grounded clinical trial research
-        </div>
+        {!hasResult && !isLoading && !error && (
+          <section aria-label="Example questions" className="max-w-2xl">
+            <p className="mb-3 text-sm font-medium text-ink-soft">Try asking:</p>
+            <div className="flex flex-wrap gap-2">
+              {EXAMPLE_QUESTIONS.map((example) => (
+                <button
+                  key={example}
+                  type="button"
+                  onClick={() => handleExampleClick(example)}
+                  className="focus-ring rounded-full border border-border bg-surface px-4 py-2 text-left text-sm text-ink-soft transition-colors hover:border-accent/40 hover:bg-accent-soft hover:text-accent-strong"
+                >
+                  {example}
+                </button>
+              ))}
+            </div>
+          </section>
+        )}
+      </main>
+
+      <footer className="border-t border-border py-8">
+        <p className="text-center text-sm text-ink-faint">TrialLens · Citation-grounded clinical trial research</p>
       </footer>
-    </main>
+    </div>
   );
 }
