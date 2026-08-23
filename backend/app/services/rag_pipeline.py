@@ -17,7 +17,7 @@ class RAGPipeline:
     ):
 
         # -------------------------------------------------
-        # 1. RETRIEVE HYBRID EVIDENCE
+        # 1. RETRIEVE HYBRID + RERANKED EVIDENCE
         # -------------------------------------------------
 
         chunks = self.retriever.retrieve(
@@ -50,21 +50,17 @@ class RAGPipeline:
 
         for chunk in chunks:
 
-            document_id = chunk.get(
-                "document_id"
-            )
-
-            trial_id = chunk.get(
-                "trial_id"
-            )
-
-            source_type = chunk.get(
-                "source_type"
-            )
+            document_id = chunk.get("document_id")
+            trial_id = chunk.get("trial_id")
+            source_type = chunk.get("source_type")
+            section = chunk.get("section")
+            content = chunk.get("content")
+            rerank_score = chunk.get("rerank_score")
 
             key = (
                 document_id,
-                trial_id,
+                section,
+                content,
             )
 
             if key in seen:
@@ -77,6 +73,9 @@ class RAGPipeline:
                     "document_id": document_id,
                     "trial_id": trial_id,
                     "source_type": source_type,
+                    "section": section,
+                    "content": content,
+                    "relevance_score": rerank_score,
                 }
             )
 

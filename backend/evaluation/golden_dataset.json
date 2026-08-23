@@ -3,30 +3,221 @@
     "id": "q1",
     "question": "What were the coprimary endpoints of the A-BRAVE trial?",
     "expected_answer": "Disease-free survival (DFS) in the intention-to-treat (ITT) population and disease-free survival in the stratum B population.",
-    "required_source": "NCT02926196"
+    "required_source": "NCT02926196",
+    "expected_keywords": [
+      "disease-free survival",
+      "intention-to-treat",
+      "stratum B"
+    ]
   },
   {
     "id": "q2",
     "question": "What treatment was evaluated in the A-BRAVE trial?",
     "expected_answer": "One year of adjuvant avelumab versus observation.",
-    "required_source": "NCT02926196"
+    "required_source": "NCT02926196",
+    "expected_keywords": [
+      "avelumab",
+      "observation",
+      "one year"
+    ]
   },
   {
     "id": "q3",
     "question": "Which patients were included in stratum B of the A-BRAVE trial?",
     "expected_answer": "Patients with invasive residual disease in the breast and/or nodes after neoadjuvant chemotherapy.",
-    "required_source": "NCT02926196"
+    "required_source": "NCT02926196",
+    "expected_keywords": [
+      "invasive residual disease",
+      "breast",
+      "nodes",
+      "neoadjuvant chemotherapy"
+    ]
   },
   {
     "id": "q4",
     "question": "Did avelumab significantly improve disease-free survival in the A-BRAVE trial?",
     "expected_answer": "No. Avelumab did not significantly improve disease-free survival.",
-    "required_source": "NCT02926196"
+    "required_source": "NCT02926196",
+    "expected_keywords": [
+      "did not",
+      "significantly improve",
+      "disease-free survival"
+    ]
   },
   {
     "id": "q5",
     "question": "What was the overall survival hazard ratio reported for avelumab in the A-BRAVE trial?",
     "expected_answer": "The reported hazard ratio for overall survival was 0.66.",
-    "required_source": "NCT02926196"
+    "required_source": "NCT02926196",
+    "expected_keywords": [
+      "overall survival",
+      "hazard ratio",
+      "0.66"
+    ]
+  },
+
+  {
+    "id": "q6",
+    "question": "What was the phase of the A-BRAVE trial?",
+    "expected_answer": "The A-BRAVE trial was a phase III randomized trial.",
+    "required_source": "NCT02926196",
+    "expected_keywords": [
+      "phase III",
+      "randomized"
+    ]
+  },
+  {
+    "id": "q7",
+    "question": "How many patients were randomly assigned in the A-BRAVE trial?",
+    "expected_answer": "466 patients were randomly assigned.",
+    "required_source": "NCT02926196",
+    "expected_keywords": [
+      "466",
+      "randomly assigned"
+    ]
+  },
+  {
+    "id": "q8",
+    "question": "What was the disease-free survival hazard ratio in the intention-to-treat population of A-BRAVE?",
+    "expected_answer": "The disease-free survival hazard ratio was 0.81 in the intention-to-treat population.",
+    "required_source": "NCT02926196",
+    "expected_keywords": [
+      "disease-free survival",
+      "0.81",
+      "intention-to-treat"
+    ]
+  },
+  {
+    "id": "q9",
+    "question": "What was the disease-free survival hazard ratio in stratum B of A-BRAVE?",
+    "expected_answer": "The disease-free survival hazard ratio was 0.80 in stratum B.",
+    "required_source": "NCT02926196",
+    "expected_keywords": [
+      "disease-free survival",
+      "0.80",
+      "stratum B"
+    ]
+  },
+  {
+    "id": "q10",
+    "question": "What were the secondary endpoints of the A-BRAVE trial?",
+    "expected_answer": "The secondary endpoints included overall survival and disease-free survival in PD-L1-positive patients.",
+    "required_source": "NCT02926196",
+    "expected_keywords": [
+      "overall survival",
+      "disease-free survival",
+      "PD-L1"
+    ]
+  },
+
+  {
+    "id": "q11",
+    "question": "What is the main topic discussed in the clinical immunotherapy review?",
+    "expected_answer": "The review discusses the development and current state of cancer immunotherapy, including checkpoint immunotherapy and emerging approaches.",
+    "required_source": "clinical_paper_1",
+    "expected_keywords": [
+      "cancer immunotherapy",
+      "checkpoint immunotherapy"
+    ]
+  },
+  {
+    "id": "q12",
+    "question": "What limitations of cancer checkpoint immunotherapy are discussed in the review?",
+    "expected_answer": "The review discusses current pitfalls and limitations of cancer checkpoint immunotherapy.",
+    "required_source": "clinical_paper_1",
+    "expected_keywords": [
+      "pitfalls",
+      "limitations",
+      "checkpoint immunotherapy"
+    ]
+  },
+  {
+    "id": "q13",
+    "question": "What areas of research are being explored to address limitations of cancer checkpoint immunotherapy?",
+    "expected_answer": "The review discusses personalized cancer vaccines, autoimmunity, the microbiome, the tumour microenvironment, and metabolomics.",
+    "required_source": "clinical_paper_1",
+    "expected_keywords": [
+      "personalized cancer vaccines",
+      "microbiome",
+      "tumour microenvironment",
+      "metabolomics"
+    ]
+  },
+
+  {
+    "id": "q14",
+    "question": "What type of information is provided in the statistical analysis plan template?",
+    "expected_answer": "The document provides a template for statistical analysis planning in a clinical trial.",
+    "required_source": "statistical_analysis_plan_template",
+    "expected_keywords": [
+      "statistical analysis",
+      "clinical trial"
+    ]
+  },
+
+  {
+    "id": "q15",
+    "question": "What is the main subject of the immunotherapy toxicity review?",
+    "expected_answer": "The document discusses toxicity and adverse effects associated with cancer immunotherapy.",
+    "required_source": "immunotherapy_toxicity_review",
+    "expected_keywords": [
+      "immunotherapy",
+      "toxicity"
+    ]
+  },
+
+  {
+    "id": "q16",
+    "question": "What type of cancer is investigated in the A-BRAVE phase III breast immunotherapy trial?",
+    "expected_answer": "The trial investigates high-risk early triple-negative breast cancer.",
+    "required_source": "phase3_breast_immunotherapy_trial",
+    "expected_keywords": [
+      "triple-negative breast cancer",
+      "high-risk",
+      "early"
+    ]
+  },
+
+  {
+    "id": "q17",
+    "question": "What was the treatment duration for avelumab in the A-BRAVE trial?",
+    "expected_answer": "Patients received one year of avelumab.",
+    "required_source": "NCT02926196",
+    "expected_keywords": [
+      "one year",
+      "avelumab"
+    ]
+  },
+  {
+    "id": "q18",
+    "question": "What was the overall survival hazard ratio for avelumab versus control in A-BRAVE?",
+    "expected_answer": "The overall survival hazard ratio was 0.66.",
+    "required_source": "NCT02926196",
+    "expected_keywords": [
+      "overall survival",
+      "0.66"
+    ]
+  },
+  {
+    "id": "q19",
+    "question": "What was the disease-free survival hazard ratio for avelumab versus control in the A-BRAVE intention-to-treat population?",
+    "expected_answer": "The disease-free survival hazard ratio was 0.81.",
+    "required_source": "NCT02926196",
+    "expected_keywords": [
+      "0.81",
+      "disease-free survival",
+      "intention-to-treat"
+    ]
+  },
+  {
+    "id": "q20",
+    "question": "What was the conclusion of the A-BRAVE trial regarding adjuvant avelumab?",
+    "expected_answer": "One year of adjuvant avelumab versus observation did not improve disease-free survival, although a descriptive analysis suggested a potential favorable impact on overall survival.",
+    "required_source": "NCT02926196",
+    "expected_keywords": [
+      "did not improve",
+      "disease-free survival",
+      "overall survival"
+    ]
   }
 ]
