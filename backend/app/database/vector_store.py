@@ -231,35 +231,36 @@ class VectorStore:
             metadata = row["metadata"] or {}
 
             # ---------------------------------------------
-            # Determine source type
+            # Determine source type and trial identity
             # ---------------------------------------------
 
-            if document_id.startswith("NCT"):
+            if document_id.upper().startswith("NCT"):
 
                 source_type = "ClinicalTrials.gov"
-
-                trial_id = document_id
+                trial_id = document_id.upper()
 
             else:
 
                 source_type = "Clinical PDF"
 
-                # Try to detect NCT ID inside PDF content
-                match = re.search(
-                    r"\bNCT\d{8}\b",
-                    content,
-                    re.IGNORECASE,
-                )
+                # Prefer structured metadata from ingestion.
+                trial_id = metadata.get("trial_id")
 
-                if match:
+                if trial_id:
+                    trial_id = trial_id.upper()
 
-                    trial_id = match.group(0).upper()
+                # Fall back to detecting an NCT ID
+                # inside the retrieved chunk.
+                if not trial_id:
 
-                else:
-
-                    trial_id = metadata.get(
-                        "trial_id"
+                    match = re.search(
+                        r"\bNCT\d{8}\b",
+                        content,
+                        re.IGNORECASE,
                     )
+
+                    if match:
+                        trial_id = match.group(0).upper()
 
             result = {
                 "document_id": document_id,

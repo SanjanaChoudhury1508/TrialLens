@@ -4,11 +4,11 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 
 interface Source {
   document_id: string;
-  trial_id: string;
+  trial_id: string | null;
   source_type: string;
-  section: string;
-  content: string;
-  relevance_score: number;
+  section: string | null;
+  content: string | null;
+  relevance_score: number | null;
 }
 
 interface AskResponse {
@@ -112,8 +112,9 @@ function EvidenceCard({
   isExpanded: boolean;
   onToggle: () => void;
 }) {
-  const preview = source.content.length > 160 ? `${source.content.slice(0, 160).trim()}…` : source.content;
-  const panelId = `evidence-panel-${index}`;
+const content = source.content ?? "No evidence text available.";
+const preview =
+  content.length > 160 ? `${content.slice(0, 160).trim()}…` : content;  const panelId = `evidence-panel-${index}`;
   const hasScore = typeof source.relevance_score === "number" && !Number.isNaN(source.relevance_score);
 
   return (
@@ -134,7 +135,9 @@ function EvidenceCard({
         {/* Trial ID + source type are the differentiating identifiers, so they carry
             the most visual weight in the card header. */}
         <div className="mb-2 flex flex-wrap items-baseline gap-x-1.5 font-mono text-sm">
-          <span className="font-semibold text-ink">{source.trial_id}</span>
+<span className="font-semibold text-ink">
+  {source.trial_id ?? "Not trial-specific"}
+</span>
           <span aria-hidden="true" className="text-ink-faint">·</span>
           <span className="text-ink-soft">{formatSourceType(source.source_type)}</span>
         </div>
@@ -146,7 +149,7 @@ function EvidenceCard({
         )}
 
         <div id={panelId} className="whitespace-pre-line text-sm leading-relaxed text-ink-soft">
-          {isExpanded ? source.content : preview}
+{isExpanded ? content : preview}
         </div>
 
         <div className="mt-3 flex items-center justify-between gap-3">
@@ -162,8 +165,9 @@ function EvidenceCard({
               →
             </span>
           </button>
-          {hasScore && <ScoreBadge score={source.relevance_score} />}
-        </div>
+{typeof source.relevance_score === "number" && (
+  <ScoreBadge score={source.relevance_score} />
+)}        </div>
       </div>
     </li>
   );
@@ -171,6 +175,7 @@ function EvidenceCard({
 
 export default function Home() {
   const [question, setQuestion] = useState("");
+  const [conversationContext, setConversationContext] = useState("");
   const [submittedQuestion, setSubmittedQuestion] = useState("");
   const [result, setResult] = useState<AskResponse | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -203,7 +208,11 @@ export default function Home() {
       const res = await fetch(`${API_URL}/ask`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question: trimmed }),
+        body: JSON.stringify({
+            question: trimmed,
+            top_k: 5,
+            conversation_context: conversationContext || null,
+        }),
       });
 
       if (!res.ok) {
@@ -211,6 +220,12 @@ export default function Home() {
       }
 
       const data: AskResponse = await res.json();
+      setConversationContext(
+        `Previous user question:
+      ${question}
+      Previous TrialLens answer:
+      ${data.answer}`
+      );
       setResult(data);
       setSubmittedQuestion(trimmed);
       setExpanded({});

@@ -2,6 +2,8 @@ from app.services.retrieval_service import RetrievalService
 from app.services.prompt_builder import PromptBuilder
 from app.services.llm_service import LLMService
 
+import re
+
 
 class RAGPipeline:
 
@@ -10,18 +12,53 @@ class RAGPipeline:
         self.retriever = RetrievalService()
         self.llm = LLMService()
 
+    @staticmethod
+    def _extract_trial_id(conversation_context: str | None):
+        """
+        Extract an NCT trial ID from previous conversation context.
+        """
+
+        if not conversation_context:
+            return None
+
+        match = re.search(
+            r"\bNCT\d{8}\b",
+            conversation_context,
+            re.IGNORECASE,
+        )
+
+        if match:
+            return match.group(0).upper()
+
+        return None
+
     def ask(
         self,
         question: str,
         top_k: int = 5,
+        conversation_context: str | None = None,
     ):
 
         # -------------------------------------------------
         # 1. RETRIEVE HYBRID + RERANKED EVIDENCE
         # -------------------------------------------------
 
+        retrieval_query = question.strip()
+
+        # If this is a follow-up question, use the previous
+        # trial identity to make retrieval more precise.
+        trial_id = self._extract_trial_id(
+            conversation_context
+        )
+
+        if trial_id:
+            retrieval_query = (
+                f"{question.strip()} "
+                f"Clinical trial {trial_id}"
+            )
+
         chunks = self.retriever.retrieve(
-            question,
+            retrieval_query,
             top_k=top_k,
         )
 
@@ -32,6 +69,7 @@ class RAGPipeline:
         prompt = PromptBuilder.build(
             question,
             chunks,
+            conversation_context=conversation_context,
         )
 
         # -------------------------------------------------

@@ -1,95 +1,83 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Virtual Environments
-.venv/
-venv/
-env/
-
-# Environment Variables
-
+# =========================
+# Environment / Secrets
+# =========================
 .env
 .env.*
 !.env.example
 
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
 
-# Logs
-
-
-*.log
-logs/
-
-
-# Python Testing
-
+.venv/
+venv/
+env/
 
 .pytest_cache/
-.coverage
-coverage.xml
-htmlcov/
 .mypy_cache/
 .ruff_cache/
 
-
-# Jupyter
-
-.ipynb_checkpoints/
-
-
-# Node
-
-
-node_modules/
-
-
-# Next.js
-
-
-.next/
-out/
-
-
-# Build
-
-
+*.egg-info/
 dist/
 build/
 
+# =========================
+# Node / Next.js
+# =========================
+node_modules/
+.next/
+out/
+.turbo/
 
-# IDE
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
 
-
+# =========================
+# IDE / Editor
+# =========================
 .vscode/
 .idea/
 
-
-# Operating System
-
-
+# =========================
+# OS
+# =========================
 .DS_Store
 Thumbs.db
-Desktop.ini
 
+# =========================
+# Logs
+# =========================
+*.log
 
-# Docker
-
-*.pid
-
-# Database
-
+# =========================
+# Local databases
+# =========================
 *.db
+*.sqlite
 *.sqlite3
 
-
-# Misc
+# =========================
+# Generated / Temporary files
+# =========================
 *.tmp
+*.temp
 *.bak
-*.swp
 
+# =========================
+# Python test / coverage
+# =========================
+.coverage
+htmlcov/
+.pytest_cache/
 
-# macOS
-
-.AppleDouble
-.LSOverride
+# =========================
+# Local data / model cache
+# =========================
+backend/data/processed/
+backend/data/embeddings/
+backend/models/

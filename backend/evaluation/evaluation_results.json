@@ -4,69 +4,1297 @@
     "question": "What were the coprimary endpoints of the A-BRAVE trial?",
     "answer_correct": true,
     "source_correct": true,
-    "answer": "The coprimary endpoints of the A-BRAVE trial (NCT02926196), as modified after an amendment in January 2020, were:\n\n1.  Disease-free survival (DFS) of patients randomly assigned to avelumab compared with control in the whole intention-to-treat (ITT) population.\n2.  DFS of patients randomly assigned to avelumab compared with control in stratum B, which includes patients with invasive residual disease (breast and/or nodes) after neoadjuvant chemotherapy.",
+    "answer": "The coprimary endpoints for the A-BRAVE trial (NCT02926196) were disease-free survival (DFS) in the intention-to-treat (ITT) population and in patients with invasive residual disease (stratum B) after neoadjuvant chemotherapy.",
     "sources": [
       {
         "document_id": "phase3_breast_immunotherapy_trial",
         "trial_id": "NCT02926196",
-        "source_type": "Clinical PDF"
+        "source_type": "Clinical PDF",
+        "section": "DISCUSSION",
+        "content": "The phase III A-BRAVE trial did not meet its primary endpoint: the HR of 0.81 for DFS with avelumab versus control for patients with TNBC at high risk of relapse was not statistically significant, with consistent results in the ITT population and those  patients  with  iRD  after  neoadjuvant  chemotherapy (coprimary  endpoints). The  descriptive  analysis  of  the  secondary endpoint OS suggested an improvement with avelumab versus control (HR 0.66, 95% CI 0.45-0.97). Similarly, a descriptive analysis of post hoc DDFS indicated a reduction in risk with avelumab (HR 0.70, 95% CI: 0.50-0.96).",
+        "relevance_score": 6.335263252258301
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Patients  and  methods: A-BRAVE  is  a  phase  III  study  that  randomly  assigned  patients  with  high-risk  early  TNBC  to 1  year  of  avelumab  versus  observation,  after  completion  of  standard  surgery  and  (neo)adjuvant  chemotherapy. High-risk  was  defined  as  either:  (i) ≥ pN2/any  pT,  pN1/pT2,  or  pN0/pT3  after  primary  surgery  (stratum  A);  or  (ii) invasive  residual  disease  (breast  and/or  nodes)  after  neoadjuvant  chemotherapy  (stratum  B).  Coprimary  endpoints were  disease-free  survival  (DFS)  in  the  intention-to-treat  (ITT)  and  stratum  B  populations.  Secondary  endpoints were  overall  survival  (OS)  and  DFS  in  PD-L1-positive  patients.  PD-L1  was  evaluated  in  treatment-naïve  tumor samples by immunohistochemistry (73-10 RUO assay, Agilent Technologies) and digital pathology.",
+        "relevance_score": 5.063416481018066
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "GRAPHICAL ABSTRACT",
+        "content": "A-BRAVE is an investigator-driven trial that was designed in 2015 before any efficacy data of ICIs in early TNBC were available, to investigate the efficacy of adjuvant avelumab in patients with early TNBC considered at high risk of relapse after  the  conclusion  of  treatment  with  curative  intent, including  chemotherapy  and  surgery.  Here  we  report  primary, secondary, and exploratory efficacy endpoints.",
+        "relevance_score": 4.106896877288818
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "Trial oversight",
+        "content": "The A-BRAVE trial (EUDRACT 2016-000189-45; NCT02926196) was an investigator-initiated, multicenter, unblinded, randomized trial conducted in 60 Italian and 7 UK hospitals (Supplementary  Table  S1,  available  at  https://doi.org/10. 1016/j.annonc.2025.08.005).  This  trial  was  developed  and sponsored  by  the  Department  of  Surgery,  Oncology  and Gastroenterology of the University of Padova, Italy.  The health care business of Merck KGaA, Darmstadt, Germany supported the trial with an unrestricted grant and supply of avelumab, but had no role in the design or conduct of the trial and was not involved in data collection or analysis, in the writing of the manuscript, or in the decision to submit it for publication. The trial was carried out in accordance with the standards of Good Clinical  Practice. The  authors  assume  responsibility  for  the accuracy and completeness of the data and analyses, as well as for the fidelity of the trial and this report to the protocol.",
+        "relevance_score": 2.1392710208892822
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Background: The  A-BRAVE  trial  evaluated  the  efficacy  of  avelumab,  an  anti-programmed  death-ligand  1  (PD-L1) antibody, as adjuvant treatment of patients with early triple-negative breast cancer (TNBC) at high risk.",
+        "relevance_score": 0.774255633354187
       }
-    ]
+    ],
+    "expected_keywords": [
+      "disease-free survival",
+      "intention-to-treat",
+      "stratum B"
+    ],
+    "matched_keywords": [
+      "disease-free survival",
+      "intention-to-treat",
+      "stratum B"
+    ],
+    "missing_keywords": [],
+    "keyword_coverage": 1.0,
+    "expected_numbers": [],
+    "matched_numbers": [],
+    "missing_numbers": []
   },
   {
     "id": "q2",
     "question": "What treatment was evaluated in the A-BRAVE trial?",
     "answer_correct": true,
     "source_correct": true,
-    "answer": "The A-BRAVE trial (NCT02926196) evaluated avelumab, an anti-programmed death-ligand 1 (PD-L1) antibody, as adjuvant treatment for patients with high-risk early triple-negative breast cancer (TNBC). Patients were randomly assigned to receive 1 year of avelumab versus observation, following the completion of standard surgery and (neo)adjuvant chemotherapy.",
+    "answer": "The A-BRAVE trial (NCT02926196) evaluated avelumab, an anti-programmed death-ligand 1 (PD-L1) antibody, as adjuvant treatment. Patients were randomly assigned to receive 1 year of avelumab versus observation.",
     "sources": [
       {
         "document_id": "phase3_breast_immunotherapy_trial",
         "trial_id": "NCT02926196",
-        "source_type": "Clinical PDF"
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Background: The  A-BRAVE  trial  evaluated  the  efficacy  of  avelumab,  an  anti-programmed  death-ligand  1  (PD-L1) antibody, as adjuvant treatment of patients with early triple-negative breast cancer (TNBC) at high risk.",
+        "relevance_score": 9.586945533752441
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "GRAPHICAL ABSTRACT",
+        "content": "A-BRAVE is an investigator-driven trial that was designed in 2015 before any efficacy data of ICIs in early TNBC were available, to investigate the efficacy of adjuvant avelumab in patients with early TNBC considered at high risk of relapse after  the  conclusion  of  treatment  with  curative  intent, including  chemotherapy  and  surgery.  Here  we  report  primary, secondary, and exploratory efficacy endpoints.",
+        "relevance_score": 8.45814323425293
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Patients  and  methods: A-BRAVE  is  a  phase  III  study  that  randomly  assigned  patients  with  high-risk  early  TNBC  to 1  year  of  avelumab  versus  observation,  after  completion  of  standard  surgery  and  (neo)adjuvant  chemotherapy. High-risk  was  defined  as  either:  (i) ≥ pN2/any  pT,  pN1/pT2,  or  pN0/pT3  after  primary  surgery  (stratum  A);  or  (ii) invasive  residual  disease  (breast  and/or  nodes)  after  neoadjuvant  chemotherapy  (stratum  B).  Coprimary  endpoints were  disease-free  survival  (DFS)  in  the  intention-to-treat  (ITT)  and  stratum  B  populations.  Secondary  endpoints were  overall  survival  (OS)  and  DFS  in  PD-L1-positive  patients.  PD-L1  was  evaluated  in  treatment-naïve  tumor samples by immunohistochemistry (73-10 RUO assay, Agilent Technologies) and digital pathology.",
+        "relevance_score": 6.611828804016113
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "Trial oversight",
+        "content": "The A-BRAVE trial (EUDRACT 2016-000189-45; NCT02926196) was an investigator-initiated, multicenter, unblinded, randomized trial conducted in 60 Italian and 7 UK hospitals (Supplementary  Table  S1,  available  at  https://doi.org/10. 1016/j.annonc.2025.08.005).  This  trial  was  developed  and sponsored  by  the  Department  of  Surgery,  Oncology  and Gastroenterology of the University of Padova, Italy.  The health care business of Merck KGaA, Darmstadt, Germany supported the trial with an unrestricted grant and supply of avelumab, but had no role in the design or conduct of the trial and was not involved in data collection or analysis, in the writing of the manuscript, or in the decision to submit it for publication. The trial was carried out in accordance with the standards of Good Clinical  Practice. The  authors  assume  responsibility  for  the accuracy and completeness of the data and analyses, as well as for the fidelity of the trial and this report to the protocol.",
+        "relevance_score": 5.492908477783203
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "DISCUSSION",
+        "content": "The phase III A-BRAVE trial did not meet its primary endpoint: the HR of 0.81 for DFS with avelumab versus control for patients with TNBC at high risk of relapse was not statistically significant, with consistent results in the ITT population and those  patients  with  iRD  after  neoadjuvant  chemotherapy (coprimary  endpoints). The  descriptive  analysis  of  the  secondary endpoint OS suggested an improvement with avelumab versus control (HR 0.66, 95% CI 0.45-0.97). Similarly, a descriptive analysis of post hoc DDFS indicated a reduction in risk with avelumab (HR 0.70, 95% CI: 0.50-0.96).",
+        "relevance_score": 4.8560791015625
       }
-    ]
+    ],
+    "expected_keywords": [
+      "avelumab",
+      "observation",
+      "one year"
+    ],
+    "matched_keywords": [
+      "avelumab",
+      "observation",
+      "one year"
+    ],
+    "missing_keywords": [],
+    "keyword_coverage": 1.0,
+    "expected_numbers": [],
+    "matched_numbers": [],
+    "missing_numbers": []
   },
   {
     "id": "q3",
     "question": "Which patients were included in stratum B of the A-BRAVE trial?",
     "answer_correct": true,
     "source_correct": true,
-    "answer": "Patients included in stratum B of the A-BRAVE trial were those with invasive residual disease (breast and/or nodes) after neoadjuvant chemotherapy (NCT02926196, Clinical PDF).",
+    "answer": "In the A-BRAVE trial (NCT02926196), stratum B included patients with invasive residual disease (iRD) in the breast and/or lymph nodes after neoadjuvant chemotherapy, as determined by local pathology examination of the surgical specimen. Excluded from stratum B were patients with ypT1micN0, ypT1micN0i+, or ypT0N0i+. A protocol amendment (April 2018) allowed for no more than 6 months of adjuvant chemotherapy after neoadjuvant treatment and surgery in this stratum.",
     "sources": [
       {
         "document_id": "phase3_breast_immunotherapy_trial",
         "trial_id": "NCT02926196",
-        "source_type": "Clinical PDF"
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Patients  and  methods: A-BRAVE  is  a  phase  III  study  that  randomly  assigned  patients  with  high-risk  early  TNBC  to 1  year  of  avelumab  versus  observation,  after  completion  of  standard  surgery  and  (neo)adjuvant  chemotherapy. High-risk  was  defined  as  either:  (i) ≥ pN2/any  pT,  pN1/pT2,  or  pN0/pT3  after  primary  surgery  (stratum  A);  or  (ii) invasive  residual  disease  (breast  and/or  nodes)  after  neoadjuvant  chemotherapy  (stratum  B).  Coprimary  endpoints were  disease-free  survival  (DFS)  in  the  intention-to-treat  (ITT)  and  stratum  B  populations.  Secondary  endpoints were  overall  survival  (OS)  and  DFS  in  PD-L1-positive  patients.  PD-L1  was  evaluated  in  treatment-naïve  tumor samples by immunohistochemistry (73-10 RUO assay, Agilent Technologies) and digital pathology.",
+        "relevance_score": 4.105306625366211
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "GRAPHICAL ABSTRACT",
+        "content": "A-BRAVE is an investigator-driven trial that was designed in 2015 before any efficacy data of ICIs in early TNBC were available, to investigate the efficacy of adjuvant avelumab in patients with early TNBC considered at high risk of relapse after  the  conclusion  of  treatment  with  curative  intent, including  chemotherapy  and  surgery.  Here  we  report  primary, secondary, and exploratory efficacy endpoints.",
+        "relevance_score": 1.9563970565795898
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "Trial oversight",
+        "content": "The A-BRAVE trial (EUDRACT 2016-000189-45; NCT02926196) was an investigator-initiated, multicenter, unblinded, randomized trial conducted in 60 Italian and 7 UK hospitals (Supplementary  Table  S1,  available  at  https://doi.org/10. 1016/j.annonc.2025.08.005).  This  trial  was  developed  and sponsored  by  the  Department  of  Surgery,  Oncology  and Gastroenterology of the University of Padova, Italy.  The health care business of Merck KGaA, Darmstadt, Germany supported the trial with an unrestricted grant and supply of avelumab, but had no role in the design or conduct of the trial and was not involved in data collection or analysis, in the writing of the manuscript, or in the decision to submit it for publication. The trial was carried out in accordance with the standards of Good Clinical  Practice. The  authors  assume  responsibility  for  the accuracy and completeness of the data and analyses, as well as for the fidelity of the trial and this report to the protocol.",
+        "relevance_score": 1.4646203517913818
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "Patients",
+        "content": "Patients  were  eligible  for  enrollment  if  they  were  aged ≥ 18 years,  had  hormone  receptor-  negative  [estrogen  receptor < 10% and progesterone receptor < 10%] and human epidermal  growth  factor  receptor  2  (HER2)-negative  [immunohistochemistry  (IHC)  0/1 + or  2 + in situ hybridization nonamplified] nonmetastatic breast cancer as defined by local laboratory, and had received treatment with curative intent, including surgery and chemotherapy with anthracyclines and taxanes.  Patients  should  have  met  the  following  protocol criteria  for  the  definition  of  high-risk  (AJCC  7th  edition):  any pT/ ≥ pN2,  pT2/pN1,  or  pT3/pN0  according  to  the  local  pathology  examination  of  samples  obtained  with  primary  surgery  (stratum  A,  adjuvant);  iRD  in  the  breast  and/or  lymph nodes as  determined by  local  pathology  examination  of  the surgical specimen obtained after neoadjuvant chemotherapy (stratum B, postneoadjuvant; ypT1micN0, ypT1micN0i + , ypT0N0i + excluded). In stratum B, no more than 6 months of adjuvant  chemotherapy  after  neoadjuvant  treatment  and surgery  was  allowed  according  to  a  protocol  amendment (April  2018).  A  complete  list  of  the  inclusion  and  exclusion criteria is provided in the trial protocol.",
+        "relevance_score": 1.4299821853637695
+      },
+      {
+        "document_id": "NCT00994123",
+        "trial_id": "NCT00994123",
+        "source_type": "ClinicalTrials.gov",
+        "section": "chunk_2",
+        "content": "Pharmaceuticals\n\nEnrollment:\n162\n\nEligibility:\nInclusion Criteria:\n\n* Patients with locally advanced or metastatic non-small cell lung cancer.\n* Patients must be \\>/= 18 years of age.\n* Patients must have adequate Performance Status (PS) as measured by ECOG and adequate end organ function.\n\nExclusion Criteria:\n\n* Patients with a recent history (within 5 years) of another malignancy.\n* Patients who are pregnant or nursing.\n* Patients with clinically significant heart failure.\n* Patients with clinically significant eye or gastrointestinal abnormalities.\n\nInterventions:\nMM-121\nErlotinib\n\nPrimary ",
+        "relevance_score": -1.4947519302368164
       }
-    ]
+    ],
+    "expected_keywords": [
+      "invasive residual disease",
+      "breast",
+      "nodes",
+      "neoadjuvant chemotherapy"
+    ],
+    "matched_keywords": [
+      "invasive residual disease",
+      "breast",
+      "nodes",
+      "neoadjuvant chemotherapy"
+    ],
+    "missing_keywords": [],
+    "keyword_coverage": 1.0,
+    "expected_numbers": [],
+    "matched_numbers": [],
+    "missing_numbers": []
   },
   {
     "id": "q4",
     "question": "Did avelumab significantly improve disease-free survival in the A-BRAVE trial?",
     "answer_correct": true,
     "source_correct": true,
-    "answer": "No, avelumab did not significantly improve disease-free survival (DFS) in the A-BRAVE trial (NCT02926196). The trial's primary endpoint, DFS with avelumab versus control, was not statistically significant for patients with triple-negative breast cancer (TNBC) at high risk of relapse, with a Hazard Ratio (HR) of 0.81. These results were consistent in both the intention-to-treat (ITT) population and patients with invasive residual disease (iRD) after neoadjuvant chemotherapy (Clinical PDF, NCT02926196).",
+    "answer": "In the A-BRAVE trial (NCT02926196), avelumab did not significantly improve disease-free survival. The trial did not meet its primary endpoint, as the hazard ratio (HR) of 0.81 for DFS with avelumab versus control was not statistically significant. This finding was consistent in both the intention-to-treat (ITT) population and in patients with invasive residual disease after neoadjuvant chemotherapy, which were coprimary endpoints.",
     "sources": [
       {
         "document_id": "phase3_breast_immunotherapy_trial",
         "trial_id": "NCT02926196",
-        "source_type": "Clinical PDF"
+        "source_type": "Clinical PDF",
+        "section": "DISCUSSION",
+        "content": "The phase III A-BRAVE trial did not meet its primary endpoint: the HR of 0.81 for DFS with avelumab versus control for patients with TNBC at high risk of relapse was not statistically significant, with consistent results in the ITT population and those  patients  with  iRD  after  neoadjuvant  chemotherapy (coprimary  endpoints). The  descriptive  analysis  of  the  secondary endpoint OS suggested an improvement with avelumab versus control (HR 0.66, 95% CI 0.45-0.97). Similarly, a descriptive analysis of post hoc DDFS indicated a reduction in risk with avelumab (HR 0.70, 95% CI: 0.50-0.96).",
+        "relevance_score": 5.6053690910339355
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Background: The  A-BRAVE  trial  evaluated  the  efficacy  of  avelumab,  an  anti-programmed  death-ligand  1  (PD-L1) antibody, as adjuvant treatment of patients with early triple-negative breast cancer (TNBC) at high risk.",
+        "relevance_score": 5.457569122314453
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Patients  and  methods: A-BRAVE  is  a  phase  III  study  that  randomly  assigned  patients  with  high-risk  early  TNBC  to 1  year  of  avelumab  versus  observation,  after  completion  of  standard  surgery  and  (neo)adjuvant  chemotherapy. High-risk  was  defined  as  either:  (i) ≥ pN2/any  pT,  pN1/pT2,  or  pN0/pT3  after  primary  surgery  (stratum  A);  or  (ii) invasive  residual  disease  (breast  and/or  nodes)  after  neoadjuvant  chemotherapy  (stratum  B).  Coprimary  endpoints were  disease-free  survival  (DFS)  in  the  intention-to-treat  (ITT)  and  stratum  B  populations.  Secondary  endpoints were  overall  survival  (OS)  and  DFS  in  PD-L1-positive  patients.  PD-L1  was  evaluated  in  treatment-naïve  tumor samples by immunohistochemistry (73-10 RUO assay, Agilent Technologies) and digital pathology.",
+        "relevance_score": 5.41111946105957
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "GRAPHICAL ABSTRACT",
+        "content": "A-BRAVE is an investigator-driven trial that was designed in 2015 before any efficacy data of ICIs in early TNBC were available, to investigate the efficacy of adjuvant avelumab in patients with early TNBC considered at high risk of relapse after  the  conclusion  of  treatment  with  curative  intent, including  chemotherapy  and  surgery.  Here  we  report  primary, secondary, and exploratory efficacy endpoints.",
+        "relevance_score": 4.804836273193359
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "Trial oversight",
+        "content": "The A-BRAVE trial (EUDRACT 2016-000189-45; NCT02926196) was an investigator-initiated, multicenter, unblinded, randomized trial conducted in 60 Italian and 7 UK hospitals (Supplementary  Table  S1,  available  at  https://doi.org/10. 1016/j.annonc.2025.08.005).  This  trial  was  developed  and sponsored  by  the  Department  of  Surgery,  Oncology  and Gastroenterology of the University of Padova, Italy.  The health care business of Merck KGaA, Darmstadt, Germany supported the trial with an unrestricted grant and supply of avelumab, but had no role in the design or conduct of the trial and was not involved in data collection or analysis, in the writing of the manuscript, or in the decision to submit it for publication. The trial was carried out in accordance with the standards of Good Clinical  Practice. The  authors  assume  responsibility  for  the accuracy and completeness of the data and analyses, as well as for the fidelity of the trial and this report to the protocol.",
+        "relevance_score": 3.7866854667663574
       }
-    ]
+    ],
+    "expected_keywords": [
+      "did not",
+      "significantly improve",
+      "disease-free survival"
+    ],
+    "matched_keywords": [
+      "did not",
+      "significantly improve",
+      "disease-free survival"
+    ],
+    "missing_keywords": [],
+    "keyword_coverage": 1.0,
+    "expected_numbers": [],
+    "matched_numbers": [],
+    "missing_numbers": []
   },
   {
     "id": "q5",
     "question": "What was the overall survival hazard ratio reported for avelumab in the A-BRAVE trial?",
     "answer_correct": true,
     "source_correct": true,
-    "answer": "In the A-BRAVE trial (NCT02926196), a descriptive analysis of the secondary endpoint overall survival (OS) reported a hazard ratio (HR) of 0.66 (95% CI 0.45-0.97) for avelumab versus control in the intention-to-treat (ITT) population. This was associated with a reduction in the hazard of death.",
+    "answer": "For the A-BRAVE trial (NCT02926196), the overall survival (OS) hazard ratio (HR) for avelumab versus control was 0.66 (95% CI 0.45-0.97) based on a descriptive analysis of this secondary endpoint.",
     "sources": [
       {
         "document_id": "phase3_breast_immunotherapy_trial",
         "trial_id": "NCT02926196",
-        "source_type": "Clinical PDF"
+        "source_type": "Clinical PDF",
+        "section": "DISCUSSION",
+        "content": "The phase III A-BRAVE trial did not meet its primary endpoint: the HR of 0.81 for DFS with avelumab versus control for patients with TNBC at high risk of relapse was not statistically significant, with consistent results in the ITT population and those  patients  with  iRD  after  neoadjuvant  chemotherapy (coprimary  endpoints). The  descriptive  analysis  of  the  secondary endpoint OS suggested an improvement with avelumab versus control (HR 0.66, 95% CI 0.45-0.97). Similarly, a descriptive analysis of post hoc DDFS indicated a reduction in risk with avelumab (HR 0.70, 95% CI: 0.50-0.96).",
+        "relevance_score": 5.913477897644043
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "Statistical analysis",
+        "content": "In  TNBC  patients  meeting  the  A-BRAVE  criteria  and randomly assigned to the control arm, the 3-year DFS rate was  expected  to  be  60%  (with  similar  estimates  for  both stratum  A  and  B). 3,6 An  improvement  to  73.6%  in  the 3-year  DFS  rate  was  the  target  effect  for  the  entire  ITT population. This  corresponds  to  an  expected  hazard  ratio (HR)  of  0.6  for  the  avelumab  arm versus the  control  arm, assuming an exponential distribution.",
+        "relevance_score": 4.68588924407959
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Results: From June 2016 to October 2020, 466 patients were randomly assigned: 383 entered stratum B (82%) and 83 entered stratum A (18%). At a median follow-up of 52.1 months, avelumab did not significantly improve DFS in the ITT population [hazard ratio (HR) 0.81, 95% confidence interval (CI) 0.61-1.09, P = 0.172; 3-year DFS estimates were 68.3% for avelumab versus 63.2%], or in stratum B (HR 0.80, 95% CI 0.58-1.10, P = 0.170; 3-year DFS estimates were 66.9% for  avelumab versus 60.7%). In a descriptive analysis, avelumab reduced the hazard of OS events: HR 0.66, 95% CI 0.45-0.97. The 3-year  OS estimates for avelumab and control arm were 84.8% (95% CI 79.5% to 88.8%) and 76.3% (95%  CI  70.1%  to  81.3%),  respectively.  PD-L1  status  was  prognostic  but  not  predictive  for  avelumab  benefit  in terms of DFS (test for interaction P = 0.155).",
+        "relevance_score": 4.452301025390625
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "Efficacy",
+        "content": "A total of 108 patients died (94.4% breast cancer-related deaths;  Supplementary  Table  S2,  available  at  https://doi. org/10.1016/j.annonc.2025.08.005):  46  in  the  avelumab arm (19.6%) and 62 (26.8%) in the control arm. According to a descriptive analysis of the secondary endpoint OS, avelumab was associated with a reduction in the hazard of death in the whole ITT: HR 0.66, 95% CI 0.45-0.97 (Figure 3A). The 3-year overall survival (OS) estimates in the avelumab and control arms were 84.8% (95% CI 79.5% to 88.8%) and 76.3% (95% CI 70.1% to 81.3%), respectively.",
+        "relevance_score": 4.3079376220703125
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Patients  and  methods: A-BRAVE  is  a  phase  III  study  that  randomly  assigned  patients  with  high-risk  early  TNBC  to 1  year  of  avelumab  versus  observation,  after  completion  of  standard  surgery  and  (neo)adjuvant  chemotherapy. High-risk  was  defined  as  either:  (i) ≥ pN2/any  pT,  pN1/pT2,  or  pN0/pT3  after  primary  surgery  (stratum  A);  or  (ii) invasive  residual  disease  (breast  and/or  nodes)  after  neoadjuvant  chemotherapy  (stratum  B).  Coprimary  endpoints were  disease-free  survival  (DFS)  in  the  intention-to-treat  (ITT)  and  stratum  B  populations.  Secondary  endpoints were  overall  survival  (OS)  and  DFS  in  PD-L1-positive  patients.  PD-L1  was  evaluated  in  treatment-naïve  tumor samples by immunohistochemistry (73-10 RUO assay, Agilent Technologies) and digital pathology.",
+        "relevance_score": 3.127387523651123
       }
+    ],
+    "expected_keywords": [
+      "overall survival",
+      "hazard ratio",
+      "0.66"
+    ],
+    "matched_keywords": [
+      "overall survival",
+      "hazard ratio",
+      "0.66"
+    ],
+    "missing_keywords": [],
+    "keyword_coverage": 1.0,
+    "expected_numbers": [
+      "0.66"
+    ],
+    "matched_numbers": [
+      "0.66"
+    ],
+    "missing_numbers": []
+  },
+  {
+    "id": "q6",
+    "question": "What was the phase of the A-BRAVE trial?",
+    "answer_correct": true,
+    "source_correct": true,
+    "answer": "The A-BRAVE trial (NCT02926196) was a phase III randomized trial.",
+    "sources": [
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "Trial oversight",
+        "content": "The A-BRAVE trial (EUDRACT 2016-000189-45; NCT02926196) was an investigator-initiated, multicenter, unblinded, randomized trial conducted in 60 Italian and 7 UK hospitals (Supplementary  Table  S1,  available  at  https://doi.org/10. 1016/j.annonc.2025.08.005).  This  trial  was  developed  and sponsored  by  the  Department  of  Surgery,  Oncology  and Gastroenterology of the University of Padova, Italy.  The health care business of Merck KGaA, Darmstadt, Germany supported the trial with an unrestricted grant and supply of avelumab, but had no role in the design or conduct of the trial and was not involved in data collection or analysis, in the writing of the manuscript, or in the decision to submit it for publication. The trial was carried out in accordance with the standards of Good Clinical  Practice. The  authors  assume  responsibility  for  the accuracy and completeness of the data and analyses, as well as for the fidelity of the trial and this report to the protocol.",
+        "relevance_score": 6.773627758026123
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "GRAPHICAL ABSTRACT",
+        "content": "A-BRAVE is an investigator-driven trial that was designed in 2015 before any efficacy data of ICIs in early TNBC were available, to investigate the efficacy of adjuvant avelumab in patients with early TNBC considered at high risk of relapse after  the  conclusion  of  treatment  with  curative  intent, including  chemotherapy  and  surgery.  Here  we  report  primary, secondary, and exploratory efficacy endpoints.",
+        "relevance_score": 6.751735687255859
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Patients  and  methods: A-BRAVE  is  a  phase  III  study  that  randomly  assigned  patients  with  high-risk  early  TNBC  to 1  year  of  avelumab  versus  observation,  after  completion  of  standard  surgery  and  (neo)adjuvant  chemotherapy. High-risk  was  defined  as  either:  (i) ≥ pN2/any  pT,  pN1/pT2,  or  pN0/pT3  after  primary  surgery  (stratum  A);  or  (ii) invasive  residual  disease  (breast  and/or  nodes)  after  neoadjuvant  chemotherapy  (stratum  B).  Coprimary  endpoints were  disease-free  survival  (DFS)  in  the  intention-to-treat  (ITT)  and  stratum  B  populations.  Secondary  endpoints were  overall  survival  (OS)  and  DFS  in  PD-L1-positive  patients.  PD-L1  was  evaluated  in  treatment-naïve  tumor samples by immunohistochemistry (73-10 RUO assay, Agilent Technologies) and digital pathology.",
+        "relevance_score": 6.454093933105469
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "DISCUSSION",
+        "content": "The phase III A-BRAVE trial did not meet its primary endpoint: the HR of 0.81 for DFS with avelumab versus control for patients with TNBC at high risk of relapse was not statistically significant, with consistent results in the ITT population and those  patients  with  iRD  after  neoadjuvant  chemotherapy (coprimary  endpoints). The  descriptive  analysis  of  the  secondary endpoint OS suggested an improvement with avelumab versus control (HR 0.66, 95% CI 0.45-0.97). Similarly, a descriptive analysis of post hoc DDFS indicated a reduction in risk with avelumab (HR 0.70, 95% CI: 0.50-0.96).",
+        "relevance_score": 6.287890911102295
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Background: The  A-BRAVE  trial  evaluated  the  efficacy  of  avelumab,  an  anti-programmed  death-ligand  1  (PD-L1) antibody, as adjuvant treatment of patients with early triple-negative breast cancer (TNBC) at high risk.",
+        "relevance_score": 5.354079246520996
+      }
+    ],
+    "expected_keywords": [
+      "phase III",
+      "randomized"
+    ],
+    "matched_keywords": [
+      "phase III",
+      "randomized"
+    ],
+    "missing_keywords": [],
+    "keyword_coverage": 1.0,
+    "expected_numbers": [],
+    "matched_numbers": [],
+    "missing_numbers": []
+  },
+  {
+    "id": "q7",
+    "question": "How many patients were randomly assigned in the A-BRAVE trial?",
+    "answer_correct": false,
+    "source_correct": true,
+    "answer": "In the A-BRAVE trial (NCT02926196), a total of 477 patients were randomly assigned. Of these, 238 patients were assigned to avelumab and 239 to observation.",
+    "sources": [
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Patients  and  methods: A-BRAVE  is  a  phase  III  study  that  randomly  assigned  patients  with  high-risk  early  TNBC  to 1  year  of  avelumab  versus  observation,  after  completion  of  standard  surgery  and  (neo)adjuvant  chemotherapy. High-risk  was  defined  as  either:  (i) ≥ pN2/any  pT,  pN1/pT2,  or  pN0/pT3  after  primary  surgery  (stratum  A);  or  (ii) invasive  residual  disease  (breast  and/or  nodes)  after  neoadjuvant  chemotherapy  (stratum  B).  Coprimary  endpoints were  disease-free  survival  (DFS)  in  the  intention-to-treat  (ITT)  and  stratum  B  populations.  Secondary  endpoints were  overall  survival  (OS)  and  DFS  in  PD-L1-positive  patients.  PD-L1  was  evaluated  in  treatment-naïve  tumor samples by immunohistochemistry (73-10 RUO assay, Agilent Technologies) and digital pathology.",
+        "relevance_score": 5.473780632019043
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "Statistical analysis",
+        "content": "In  TNBC  patients  meeting  the  A-BRAVE  criteria  and randomly assigned to the control arm, the 3-year DFS rate was  expected  to  be  60%  (with  similar  estimates  for  both stratum  A  and  B). 3,6 An  improvement  to  73.6%  in  the 3-year  DFS  rate  was  the  target  effect  for  the  entire  ITT population. This  corresponds  to  an  expected  hazard  ratio (HR)  of  0.6  for  the  avelumab  arm versus the  control  arm, assuming an exponential distribution.",
+        "relevance_score": 4.766491413116455
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "Trial oversight",
+        "content": "The A-BRAVE trial (EUDRACT 2016-000189-45; NCT02926196) was an investigator-initiated, multicenter, unblinded, randomized trial conducted in 60 Italian and 7 UK hospitals (Supplementary  Table  S1,  available  at  https://doi.org/10. 1016/j.annonc.2025.08.005).  This  trial  was  developed  and sponsored  by  the  Department  of  Surgery,  Oncology  and Gastroenterology of the University of Padova, Italy.  The health care business of Merck KGaA, Darmstadt, Germany supported the trial with an unrestricted grant and supply of avelumab, but had no role in the design or conduct of the trial and was not involved in data collection or analysis, in the writing of the manuscript, or in the decision to submit it for publication. The trial was carried out in accordance with the standards of Good Clinical  Practice. The  authors  assume  responsibility  for  the accuracy and completeness of the data and analyses, as well as for the fidelity of the trial and this report to the protocol.",
+        "relevance_score": 4.583209037780762
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "Patients",
+        "content": "Between June 2016 and October 2020, a total of 514 patients from  67  centers  were  screened  and  477  were  randomly assigned: 238 to avelumab and 239 to observation (Figure 1). After randomization, 10 patients withdrew consent and one Values  in  bold  refer  to  the  Stratum  in  question,  not  the  entire  population  in  the study.",
+        "relevance_score": 3.385037660598755
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "GRAPHICAL ABSTRACT",
+        "content": "A-BRAVE is an investigator-driven trial that was designed in 2015 before any efficacy data of ICIs in early TNBC were available, to investigate the efficacy of adjuvant avelumab in patients with early TNBC considered at high risk of relapse after  the  conclusion  of  treatment  with  curative  intent, including  chemotherapy  and  surgery.  Here  we  report  primary, secondary, and exploratory efficacy endpoints.",
+        "relevance_score": 2.5239510536193848
+      }
+    ],
+    "expected_keywords": [
+      "466",
+      "randomly assigned"
+    ],
+    "matched_keywords": [
+      "randomly assigned"
+    ],
+    "missing_keywords": [
+      "466"
+    ],
+    "keyword_coverage": 0.5,
+    "expected_numbers": [
+      "466"
+    ],
+    "matched_numbers": [],
+    "missing_numbers": [
+      "466"
     ]
+  },
+  {
+    "id": "q8",
+    "question": "What was the disease-free survival hazard ratio in the intention-to-treat population of A-BRAVE?",
+    "answer_correct": true,
+    "source_correct": true,
+    "answer": "In the A-BRAVE trial (NCT02926196), the disease-free survival hazard ratio in the intention-to-treat population was 0.81 (95% CI 0.61-1.09, P = 0.172). This result was not statistically significant.",
+    "sources": [
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Patients  and  methods: A-BRAVE  is  a  phase  III  study  that  randomly  assigned  patients  with  high-risk  early  TNBC  to 1  year  of  avelumab  versus  observation,  after  completion  of  standard  surgery  and  (neo)adjuvant  chemotherapy. High-risk  was  defined  as  either:  (i) ≥ pN2/any  pT,  pN1/pT2,  or  pN0/pT3  after  primary  surgery  (stratum  A);  or  (ii) invasive  residual  disease  (breast  and/or  nodes)  after  neoadjuvant  chemotherapy  (stratum  B).  Coprimary  endpoints were  disease-free  survival  (DFS)  in  the  intention-to-treat  (ITT)  and  stratum  B  populations.  Secondary  endpoints were  overall  survival  (OS)  and  DFS  in  PD-L1-positive  patients.  PD-L1  was  evaluated  in  treatment-naïve  tumor samples by immunohistochemistry (73-10 RUO assay, Agilent Technologies) and digital pathology.",
+        "relevance_score": 3.897143840789795
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "Statistical analysis",
+        "content": "In  TNBC  patients  meeting  the  A-BRAVE  criteria  and randomly assigned to the control arm, the 3-year DFS rate was  expected  to  be  60%  (with  similar  estimates  for  both stratum  A  and  B). 3,6 An  improvement  to  73.6%  in  the 3-year  DFS  rate  was  the  target  effect  for  the  entire  ITT population. This  corresponds  to  an  expected  hazard  ratio (HR)  of  0.6  for  the  avelumab  arm versus the  control  arm, assuming an exponential distribution.",
+        "relevance_score": 2.636967182159424
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "DISCUSSION",
+        "content": "The phase III A-BRAVE trial did not meet its primary endpoint: the HR of 0.81 for DFS with avelumab versus control for patients with TNBC at high risk of relapse was not statistically significant, with consistent results in the ITT population and those  patients  with  iRD  after  neoadjuvant  chemotherapy (coprimary  endpoints). The  descriptive  analysis  of  the  secondary endpoint OS suggested an improvement with avelumab versus control (HR 0.66, 95% CI 0.45-0.97). Similarly, a descriptive analysis of post hoc DDFS indicated a reduction in risk with avelumab (HR 0.70, 95% CI: 0.50-0.96).",
+        "relevance_score": 1.9953837394714355
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Results: From June 2016 to October 2020, 466 patients were randomly assigned: 383 entered stratum B (82%) and 83 entered stratum A (18%). At a median follow-up of 52.1 months, avelumab did not significantly improve DFS in the ITT population [hazard ratio (HR) 0.81, 95% confidence interval (CI) 0.61-1.09, P = 0.172; 3-year DFS estimates were 68.3% for avelumab versus 63.2%], or in stratum B (HR 0.80, 95% CI 0.58-1.10, P = 0.170; 3-year DFS estimates were 66.9% for  avelumab versus 60.7%). In a descriptive analysis, avelumab reduced the hazard of OS events: HR 0.66, 95% CI 0.45-0.97. The 3-year  OS estimates for avelumab and control arm were 84.8% (95% CI 79.5% to 88.8%) and 76.3% (95%  CI  70.1%  to  81.3%),  respectively.  PD-L1  status  was  prognostic  but  not  predictive  for  avelumab  benefit  in terms of DFS (test for interaction P = 0.155).",
+        "relevance_score": -1.5267894268035889
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "GRAPHICAL ABSTRACT",
+        "content": "A-BRAVE is an investigator-driven trial that was designed in 2015 before any efficacy data of ICIs in early TNBC were available, to investigate the efficacy of adjuvant avelumab in patients with early TNBC considered at high risk of relapse after  the  conclusion  of  treatment  with  curative  intent, including  chemotherapy  and  surgery.  Here  we  report  primary, secondary, and exploratory efficacy endpoints.",
+        "relevance_score": -1.5623207092285156
+      }
+    ],
+    "expected_keywords": [
+      "disease-free survival",
+      "0.81",
+      "intention-to-treat"
+    ],
+    "matched_keywords": [
+      "disease-free survival",
+      "0.81",
+      "intention-to-treat"
+    ],
+    "missing_keywords": [],
+    "keyword_coverage": 1.0,
+    "expected_numbers": [
+      "0.81"
+    ],
+    "matched_numbers": [
+      "0.81"
+    ],
+    "missing_numbers": []
+  },
+  {
+    "id": "q9",
+    "question": "What was the disease-free survival hazard ratio in stratum B of A-BRAVE?",
+    "answer_correct": true,
+    "source_correct": true,
+    "answer": "In the A-BRAVE trial (NCT02926196), the disease-free survival hazard ratio in stratum B was 0.80 (95% CI 0.58-1.10, P = 0.170). The 3-year DFS estimates in stratum B were 66.9% for avelumab versus 60.7% for the control arm.",
+    "sources": [
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "Statistical analysis",
+        "content": "In  TNBC  patients  meeting  the  A-BRAVE  criteria  and randomly assigned to the control arm, the 3-year DFS rate was  expected  to  be  60%  (with  similar  estimates  for  both stratum  A  and  B). 3,6 An  improvement  to  73.6%  in  the 3-year  DFS  rate  was  the  target  effect  for  the  entire  ITT population. This  corresponds  to  an  expected  hazard  ratio (HR)  of  0.6  for  the  avelumab  arm versus the  control  arm, assuming an exponential distribution.",
+        "relevance_score": 3.982743740081787
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Patients  and  methods: A-BRAVE  is  a  phase  III  study  that  randomly  assigned  patients  with  high-risk  early  TNBC  to 1  year  of  avelumab  versus  observation,  after  completion  of  standard  surgery  and  (neo)adjuvant  chemotherapy. High-risk  was  defined  as  either:  (i) ≥ pN2/any  pT,  pN1/pT2,  or  pN0/pT3  after  primary  surgery  (stratum  A);  or  (ii) invasive  residual  disease  (breast  and/or  nodes)  after  neoadjuvant  chemotherapy  (stratum  B).  Coprimary  endpoints were  disease-free  survival  (DFS)  in  the  intention-to-treat  (ITT)  and  stratum  B  populations.  Secondary  endpoints were  overall  survival  (OS)  and  DFS  in  PD-L1-positive  patients.  PD-L1  was  evaluated  in  treatment-naïve  tumor samples by immunohistochemistry (73-10 RUO assay, Agilent Technologies) and digital pathology.",
+        "relevance_score": 3.9497153759002686
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Results: From June 2016 to October 2020, 466 patients were randomly assigned: 383 entered stratum B (82%) and 83 entered stratum A (18%). At a median follow-up of 52.1 months, avelumab did not significantly improve DFS in the ITT population [hazard ratio (HR) 0.81, 95% confidence interval (CI) 0.61-1.09, P = 0.172; 3-year DFS estimates were 68.3% for avelumab versus 63.2%], or in stratum B (HR 0.80, 95% CI 0.58-1.10, P = 0.170; 3-year DFS estimates were 66.9% for  avelumab versus 60.7%). In a descriptive analysis, avelumab reduced the hazard of OS events: HR 0.66, 95% CI 0.45-0.97. The 3-year  OS estimates for avelumab and control arm were 84.8% (95% CI 79.5% to 88.8%) and 76.3% (95%  CI  70.1%  to  81.3%),  respectively.  PD-L1  status  was  prognostic  but  not  predictive  for  avelumab  benefit  in terms of DFS (test for interaction P = 0.155).",
+        "relevance_score": 2.836757183074951
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "DISCUSSION",
+        "content": "The phase III A-BRAVE trial did not meet its primary endpoint: the HR of 0.81 for DFS with avelumab versus control for patients with TNBC at high risk of relapse was not statistically significant, with consistent results in the ITT population and those  patients  with  iRD  after  neoadjuvant  chemotherapy (coprimary  endpoints). The  descriptive  analysis  of  the  secondary endpoint OS suggested an improvement with avelumab versus control (HR 0.66, 95% CI 0.45-0.97). Similarly, a descriptive analysis of post hoc DDFS indicated a reduction in risk with avelumab (HR 0.70, 95% CI: 0.50-0.96).",
+        "relevance_score": 2.240306854248047
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "GRAPHICAL ABSTRACT",
+        "content": "A-BRAVE is an investigator-driven trial that was designed in 2015 before any efficacy data of ICIs in early TNBC were available, to investigate the efficacy of adjuvant avelumab in patients with early TNBC considered at high risk of relapse after  the  conclusion  of  treatment  with  curative  intent, including  chemotherapy  and  surgery.  Here  we  report  primary, secondary, and exploratory efficacy endpoints.",
+        "relevance_score": -1.87311851978302
+      }
+    ],
+    "expected_keywords": [
+      "disease-free survival",
+      "0.80",
+      "stratum B"
+    ],
+    "matched_keywords": [
+      "disease-free survival",
+      "0.80",
+      "stratum B"
+    ],
+    "missing_keywords": [],
+    "keyword_coverage": 1.0,
+    "expected_numbers": [
+      "0.80"
+    ],
+    "matched_numbers": [
+      "0.80"
+    ],
+    "missing_numbers": []
+  },
+  {
+    "id": "q10",
+    "question": "What were the secondary endpoints of the A-BRAVE trial?",
+    "answer_correct": true,
+    "source_correct": true,
+    "answer": "For the A-BRAVE trial (NCT02926196), the secondary endpoints were overall survival (OS) and disease-free survival (DFS) in PD-L1-positive patients.",
+    "sources": [
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "DISCUSSION",
+        "content": "The phase III A-BRAVE trial did not meet its primary endpoint: the HR of 0.81 for DFS with avelumab versus control for patients with TNBC at high risk of relapse was not statistically significant, with consistent results in the ITT population and those  patients  with  iRD  after  neoadjuvant  chemotherapy (coprimary  endpoints). The  descriptive  analysis  of  the  secondary endpoint OS suggested an improvement with avelumab versus control (HR 0.66, 95% CI 0.45-0.97). Similarly, a descriptive analysis of post hoc DDFS indicated a reduction in risk with avelumab (HR 0.70, 95% CI: 0.50-0.96).",
+        "relevance_score": 6.590243339538574
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Patients  and  methods: A-BRAVE  is  a  phase  III  study  that  randomly  assigned  patients  with  high-risk  early  TNBC  to 1  year  of  avelumab  versus  observation,  after  completion  of  standard  surgery  and  (neo)adjuvant  chemotherapy. High-risk  was  defined  as  either:  (i) ≥ pN2/any  pT,  pN1/pT2,  or  pN0/pT3  after  primary  surgery  (stratum  A);  or  (ii) invasive  residual  disease  (breast  and/or  nodes)  after  neoadjuvant  chemotherapy  (stratum  B).  Coprimary  endpoints were  disease-free  survival  (DFS)  in  the  intention-to-treat  (ITT)  and  stratum  B  populations.  Secondary  endpoints were  overall  survival  (OS)  and  DFS  in  PD-L1-positive  patients.  PD-L1  was  evaluated  in  treatment-naïve  tumor samples by immunohistochemistry (73-10 RUO assay, Agilent Technologies) and digital pathology.",
+        "relevance_score": 4.882757663726807
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "GRAPHICAL ABSTRACT",
+        "content": "A-BRAVE is an investigator-driven trial that was designed in 2015 before any efficacy data of ICIs in early TNBC were available, to investigate the efficacy of adjuvant avelumab in patients with early TNBC considered at high risk of relapse after  the  conclusion  of  treatment  with  curative  intent, including  chemotherapy  and  surgery.  Here  we  report  primary, secondary, and exploratory efficacy endpoints.",
+        "relevance_score": 4.575024604797363
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "Trial oversight",
+        "content": "The A-BRAVE trial (EUDRACT 2016-000189-45; NCT02926196) was an investigator-initiated, multicenter, unblinded, randomized trial conducted in 60 Italian and 7 UK hospitals (Supplementary  Table  S1,  available  at  https://doi.org/10. 1016/j.annonc.2025.08.005).  This  trial  was  developed  and sponsored  by  the  Department  of  Surgery,  Oncology  and Gastroenterology of the University of Padova, Italy.  The health care business of Merck KGaA, Darmstadt, Germany supported the trial with an unrestricted grant and supply of avelumab, but had no role in the design or conduct of the trial and was not involved in data collection or analysis, in the writing of the manuscript, or in the decision to submit it for publication. The trial was carried out in accordance with the standards of Good Clinical  Practice. The  authors  assume  responsibility  for  the accuracy and completeness of the data and analyses, as well as for the fidelity of the trial and this report to the protocol.",
+        "relevance_score": 1.4279289245605469
+      },
+      {
+        "document_id": "phase2_melanoma_immunotherapy_trial",
+        "trial_id": null,
+        "source_type": "Clinical PDF",
+        "section": "Data collection",
+        "content": "The primary endpoint was the overall response rate (ORR), de fi ned as the proportion of subjects who achieved complete or partial response as their best overall response by RECIST version 1.1. Patients were also marked as having a complete response despite evidence of residual disease on imaging if biopsy of that site showed no evidence of disease. Secondary endpoints included toxicity, as determined by CTCAE version 5, progression-free survival (PFS), de fi ned as time from enrollment until con fi rmed disease progression by RECIST 1.1, clinical progression or death from any cause, and overall survival (OS), de fi ned as time from enrollment until death from any cause.",
+        "relevance_score": 1.3007965087890625
+      }
+    ],
+    "expected_keywords": [
+      "overall survival",
+      "disease-free survival",
+      "PD-L1"
+    ],
+    "matched_keywords": [
+      "overall survival",
+      "disease-free survival",
+      "PD-L1"
+    ],
+    "missing_keywords": [],
+    "keyword_coverage": 1.0,
+    "expected_numbers": [],
+    "matched_numbers": [],
+    "missing_numbers": []
+  },
+  {
+    "id": "q11",
+    "question": "What is the main topic discussed in the clinical immunotherapy review?",
+    "answer_correct": true,
+    "source_correct": true,
+    "answer": "The clinical immunotherapy review (NCT02950766) primarily discusses the history of cancer immunotherapy, current standards of care—with a strong focus on immune checkpoint inhibitors (ICIs)—their limitations and pitfalls, and promising novel approaches. It also highlights how research in areas such as personalized cancer vaccines, autoimmunity, the microbiome, the tumor microenvironment, and metabolomics aims to address current challenges.",
+    "sources": [
+      {
+        "document_id": "clinical_paper_1",
+        "trial_id": "NCT02950766",
+        "source_type": "Clinical PDF",
+        "section": "ABSTRACT",
+        "content": "Compared with previous standards of care (including chemotherapy, radiotherapy, and surgery), cancer immunotherapy has brought significant improvements for patients in terms of survival and quality of life. Immunotherapy has now firmly established itself as a novel pillar of cancer care, from the metastatic stage to the adjuvant and neoadjuvant settings in numerous cancer types. In this review article, we highlight how the history of cancer immunotherapy paved the way for discoveries that are now part of the standard of care. We also highlight the current pitfalls and limitations of cancer checkpoint immunotherapy and how novel research in the fields of personalized cancer vaccines, autoimmunity, the microbiome, the tumour microenvironment, and metabolomics is aiming to solve those challenges.",
+        "relevance_score": 1.2648217678070068
+      },
+      {
+        "document_id": "clinical_paper_1",
+        "trial_id": "NCT02950766",
+        "source_type": "Clinical PDF",
+        "section": "INTRODUCTION",
+        "content": "In this review article, we highlight the current standards of care in cancer immunotherapy, with a strong focus on immune checkpoint inhibitors ( ici s), their limitations and pitfalls, and promising novel approaches.",
+        "relevance_score": 1.002928614616394
+      },
+      {
+        "document_id": "NCT04351256",
+        "trial_id": "NCT04351256",
+        "source_type": "ClinicalTrials.gov",
+        "section": "chunk_7",
+        "content": "l) clinical study, or during the follow-up period of an interventional study.\n2. Participation in another clinical study with an investigational product within 21 days prior to the first dose of the study treatment.\n3. Prior immunotherapy or use of other investigational agents, including prior treatment with an anti-Programmed Death receptor-1 (PD-1),anti-Programmed Death-1 ligand-1 (PD-L1), anti-PD-L2, or anti-cytotoxic T-lymphocyte associated antigen-4 (anti-CTLA-4) antibody, therapeutic cancer vaccines.\n4. History or current radiology suggestive of interstitial lung disease.\n5. Oxygen-depen",
+        "relevance_score": -2.8952245712280273
+      },
+      {
+        "document_id": "clinical_paper_1",
+        "trial_id": "NCT02950766",
+        "source_type": "Clinical PDF",
+        "section": "SUMMARY",
+        "content": "Cancer immunotherapy has dramatically changed survival and quality of life for patients. However, not all cancers are equal, and very few predictors of response and toxicity currently exist. Despite the rapid advances made in the field, immuno-oncology is still in its relative infancy, with numerous challenges and hurdles yet to be overcome. Over time, a realization grew that the standard tools used to assess choice of treatments in the era of chemotherapy and targeted therapies might not be valid for the new immunotherapies. As an example, the Response Evaluation Criteria in Solid Tumors ( recist ) used to assess response to treatments were modified to create i recist , which accounts for the novel patterns of response seen during immunotherapy, including tumour pseudoprogression 104 . In the same way that TNM staging has been crucial in guiding treatments in the era of chemotherapy, novel tools are required in the era of cancer immunotherapy. The Immu- noscore has already been validated as adding important prognostic information to TNM staging in colon cancer 39 . The fact that T   cells are currently widely recognized as the key mediators of antitumour efficacy with ici treatment suggests that use of the Immunoscore is an attractive option to help guide treatment selection in other cancer types as well. Still, that option does not exclude the possible use of additional parameters that might provide further insights into the specifics of each case.",
+        "relevance_score": -3.0450329780578613
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Key words: breast cancer, clinical trial, immunotherapy, triple-negative breast cancer, PD-L1",
+        "relevance_score": -3.259955883026123
+      }
+    ],
+    "expected_keywords": [
+      "cancer immunotherapy",
+      "checkpoint immunotherapy"
+    ],
+    "matched_keywords": [
+      "cancer immunotherapy",
+      "checkpoint immunotherapy"
+    ],
+    "missing_keywords": [],
+    "keyword_coverage": 1.0,
+    "expected_numbers": [],
+    "matched_numbers": [],
+    "missing_numbers": []
+  },
+  {
+    "id": "q12",
+    "question": "What limitations of cancer checkpoint immunotherapy are discussed in the review?",
+    "answer_correct": true,
+    "source_correct": true,
+    "answer": "The review associated with NCT02950766 discusses several limitations and pitfalls of cancer checkpoint immunotherapy. These include:\n\n*   The current broad \"shotgun\" approach, which exposes all patients within the approved indications to immune checkpoint inhibitors without tailoring treatments to the unique factors of each cancer and host.\n*   Challenges related to personalized cancer vaccines.\n*   Challenges related to autoimmunity.\n*   Challenges related to the microbiome.\n*   Challenges related to the tumor microenvironment.\n*   Challenges related to metabolomics.\n\nNovel research in these fields is aiming to solve these challenges.",
+    "sources": [
+      {
+        "document_id": "clinical_paper_1",
+        "trial_id": "NCT02950766",
+        "source_type": "Clinical PDF",
+        "section": "INTRODUCTION",
+        "content": "In this review article, we highlight the current standards of care in cancer immunotherapy, with a strong focus on immune checkpoint inhibitors ( ici s), their limitations and pitfalls, and promising novel approaches.",
+        "relevance_score": 5.4212236404418945
+      },
+      {
+        "document_id": "clinical_paper_1",
+        "trial_id": "NCT02950766",
+        "source_type": "Clinical PDF",
+        "section": "ABSTRACT",
+        "content": "Compared with previous standards of care (including chemotherapy, radiotherapy, and surgery), cancer immunotherapy has brought significant improvements for patients in terms of survival and quality of life. Immunotherapy has now firmly established itself as a novel pillar of cancer care, from the metastatic stage to the adjuvant and neoadjuvant settings in numerous cancer types. In this review article, we highlight how the history of cancer immunotherapy paved the way for discoveries that are now part of the standard of care. We also highlight the current pitfalls and limitations of cancer checkpoint immunotherapy and how novel research in the fields of personalized cancer vaccines, autoimmunity, the microbiome, the tumour microenvironment, and metabolomics is aiming to solve those challenges.",
+        "relevance_score": 5.145956993103027
+      },
+      {
+        "document_id": "clinical_paper_1",
+        "trial_id": "NCT02950766",
+        "source_type": "Clinical PDF",
+        "section": "SUMMARY",
+        "content": "To summarize, the future of cancer immunotherapy could rely on combination therapies using checkpoint inhibitors not with other novel checkpoint inhibitors, but rather with personalized cancer vaccines and novel targeted therapies directed at the tumour microenvironment, tumour glycosylation, and the host microbiome, as outlined in the present review. Advances in those fields will allow movement away from the current broad 'shotgun' approach, which exposes all comers within the approved indications to ici s, to treatments tailored to the factors that make each cancer and host a unique pairing.",
+        "relevance_score": 3.236513614654541
+      },
+      {
+        "document_id": "immunotherapy_toxicity_review",
+        "trial_id": "NCT01375842",
+        "source_type": "Clinical PDF",
+        "section": "Abstract",
+        "content": "The widespread adoption of immunotherapy has revolutionized the treatment of various cancer types, including metastatic triple-negative breast cancer (TNBC), which has long been associated with poor prognostic outcomes. In particular, immune checkpoint inhibitors (ICIs) that target and inhibit programmed cell death-1 (PD-1) and programmed cell death ligand-1 (PD-L1), have shown promising results in the treatment of patients with metastatic TNBC. However, while manipulating the immune system to induce antitumor response, ICIs can also lead to a unique set of immune-related adverse events (IRAEs), which differ from standard chemotherapy toxicities due to their immune-based origin. These toxicities require highly specific management, including guidance from multidisciplinary specialists. The primary treatment strategy against IRAEs is systemic corticosteroid use, but additional treatment approaches may also involve supportive care, additional immunosuppression, and concurrent treatment delay or discontinuation. Given the rising prevalence of ICI therapy, it is essential to educate clinicians on the presentation and management of these potentially life-threatening events so that they are identified early and treated appropriately. Using data from recent clinical trials, this review will focus on known IRAEs, particularly those seen in patients with breast cancer, and will summarize their prevalence, severity, and outcomes. We will discuss optimal strategies for early recognition and management, as well as approaches toward cautious retreatment following resolution of IRAEs.",
+        "relevance_score": 1.4907703399658203
+      },
+      {
+        "document_id": "phase3_lung_immunotherapy_trial",
+        "trial_id": "NCT03285321",
+        "source_type": "Clinical PDF",
+        "section": "Consolidation immune therapy after concurrent or sequential CRT",
+        "content": "immune system might be more severely impaired by CRT jeopardizing immunotherapy efficacy. 18 Based on the aforementioned trials and biological evidence, fit patients treated with SCRT might derive meaningful survival benefit from adjuvant immunotherapy, although data for patients with PS ¼ 2 are largely lacking. Studies should be carried out in this patients ' population, as well. A limitation of the design of the aforementioned trials d including the PACIFIC trial d is that they did not take into consideration the patients who progressed during CRT or who did not recover from CRT. This also precludes a comparison with survival data from trials evaluating immunotherapy concurrent with CRT.",
+        "relevance_score": -0.30307549238204956
+      }
+    ],
+    "expected_keywords": [
+      "pitfalls",
+      "limitations",
+      "checkpoint immunotherapy"
+    ],
+    "matched_keywords": [
+      "pitfalls",
+      "limitations",
+      "checkpoint immunotherapy"
+    ],
+    "missing_keywords": [],
+    "keyword_coverage": 1.0,
+    "expected_numbers": [],
+    "matched_numbers": [],
+    "missing_numbers": []
+  },
+  {
+    "id": "q13",
+    "question": "What areas of research are being explored to address limitations of cancer checkpoint immunotherapy?",
+    "answer_correct": true,
+    "source_correct": true,
+    "answer": "To address the limitations of cancer checkpoint immunotherapy, novel research is being explored in the following areas, as highlighted in the review article associated with NCT02950766:\n\n*   Personalized cancer vaccines\n*   Autoimmunity\n*   The microbiome (or host microbiome)\n*   The tumour microenvironment\n*   Metabolomics\n*   Tumour glycosylation\n\nAdditionally, the future of cancer immunotherapy could rely on combination therapies using checkpoint inhibitors with personalized cancer vaccines and novel targeted therapies directed at the tumour microenvironment, tumour glycosylation, and the host microbiome. Finding the right combination of immune checkpoint inhibitor (ICI) therapy to induce optimal immune activation is also an active area of clinical research.",
+    "sources": [
+      {
+        "document_id": "clinical_paper_1",
+        "trial_id": "NCT02950766",
+        "source_type": "Clinical PDF",
+        "section": "ABSTRACT",
+        "content": "Compared with previous standards of care (including chemotherapy, radiotherapy, and surgery), cancer immunotherapy has brought significant improvements for patients in terms of survival and quality of life. Immunotherapy has now firmly established itself as a novel pillar of cancer care, from the metastatic stage to the adjuvant and neoadjuvant settings in numerous cancer types. In this review article, we highlight how the history of cancer immunotherapy paved the way for discoveries that are now part of the standard of care. We also highlight the current pitfalls and limitations of cancer checkpoint immunotherapy and how novel research in the fields of personalized cancer vaccines, autoimmunity, the microbiome, the tumour microenvironment, and metabolomics is aiming to solve those challenges.",
+        "relevance_score": 4.022249698638916
+      },
+      {
+        "document_id": "clinical_paper_1",
+        "trial_id": "NCT02950766",
+        "source_type": "Clinical PDF",
+        "section": "INTRODUCTION",
+        "content": "In this review article, we highlight the current standards of care in cancer immunotherapy, with a strong focus on immune checkpoint inhibitors ( ici s), their limitations and pitfalls, and promising novel approaches.",
+        "relevance_score": 2.8090438842773438
+      },
+      {
+        "document_id": "clinical_paper_1",
+        "trial_id": "NCT02950766",
+        "source_type": "Clinical PDF",
+        "section": "Overview of Checkpoint Inhibitors",
+        "content": "Immune checkpoint inhibitor therapies are now widely indicated in numerous cancer types (Table i ). Furthermore, numerous ongoing clinical trials are assessing the potential of other agonistic or inhibitory checkpoints to affect tumour-related outcomes (Table ii ). The checkpoints are not equal in their potential. For example, the agonistic OX40 antibody has modest clinical activity, but the CD28 antibody-even at very subtherapeutic doses-resulted in  massive cytokine syndrome and the intensive-care hospitalization of the first 6 healthy volunteers treated 8 . In that light, finding the right combination of ici therapy to induce the optimal amount of immune activation remains an active area of clinical research.",
+        "relevance_score": 0.8023898005485535
+      },
+      {
+        "document_id": "clinical_paper_1",
+        "trial_id": "NCT02950766",
+        "source_type": "Clinical PDF",
+        "section": "INTRODUCTION",
+        "content": "The next revolutionary wave in cancer immunotherapy came with the better understanding of the process of immune surveillance, by which innate immune cells eliminate cancer cells. The recent discovery of T   cell immune checkpoints, such as ctla -4 and PD-1, propelled the field of immuno-oncology into its current era and saw the awarding of the 2018 Nobel prize in Physiology or Medicine to Drs. Allison and Honjo. Those hardwired signals have the crucial task of maintaining a fine balance between immune",
+        "relevance_score": -0.24037261307239532
+      },
+      {
+        "document_id": "clinical_paper_1",
+        "trial_id": "NCT02950766",
+        "source_type": "Clinical PDF",
+        "section": "SUMMARY",
+        "content": "To summarize, the future of cancer immunotherapy could rely on combination therapies using checkpoint inhibitors not with other novel checkpoint inhibitors, but rather with personalized cancer vaccines and novel targeted therapies directed at the tumour microenvironment, tumour glycosylation, and the host microbiome, as outlined in the present review. Advances in those fields will allow movement away from the current broad 'shotgun' approach, which exposes all comers within the approved indications to ici s, to treatments tailored to the factors that make each cancer and host a unique pairing.",
+        "relevance_score": -0.838773787021637
+      }
+    ],
+    "expected_keywords": [
+      "personalized cancer vaccines",
+      "microbiome",
+      "tumour microenvironment",
+      "metabolomics"
+    ],
+    "matched_keywords": [
+      "personalized cancer vaccines",
+      "microbiome",
+      "tumour microenvironment",
+      "metabolomics"
+    ],
+    "missing_keywords": [],
+    "keyword_coverage": 1.0,
+    "expected_numbers": [],
+    "matched_numbers": [],
+    "missing_numbers": []
+  },
+  {
+    "id": "q14",
+    "question": "What type of information is provided in the statistical analysis plan template?",
+    "answer_correct": false,
+    "source_correct": true,
+    "answer": "A Statistical Analysis Plan (SAP) template provides a detailed description of the planned analysis of study objectives. It describes the variables and outcomes that will be collected, along with the statistical methods to be used for their analysis.\n\nThe SAP also defines:\n*   The population(s) and time point(s) for each analysis.\n*   Details such as multiplicity control.\n*   Sensitivity analyses.\n*   Methods used to handle missing data.\n*   Prospectively identified subset analyses and the specific analyses to be performed on each subset of interest.\n*   Clear rules for inclusion in each analysis population.\n\nIts purpose is to provide a framework for achieving protocol objectives rigorously, without bias or analytical deficiencies, by detailing all study populations, endpoints, and preplanned analyses.",
+    "sources": [
+      {
+        "document_id": "statistical_analysis_plan_template",
+        "trial_id": null,
+        "source_type": "Clinical PDF",
+        "section": "1.1. The statistical analysis plan",
+        "content": "The Statistical Analysis Plan (SAP) is a key document that complements the study protocol in randomized controlled trials (RCT). SAPs are a  vital  component  of  transparent,  objective,  rigorous,  reproducible research. The SAP ' describes the planned analysis of study objectives … it describes what variables and outcomes will be collected and which statistical methods will be used to analyze them [1] ' . National regulatory  agencies  around  the  world  require  SAPs  to  be  submitted  when considering drugs, biologics, and devices for approval. The SAP is meant to supplement the protocol and provide richer detail for all prospectively planned statistical analyses. In addition, it defines the population(s) and time point(s) used for each analysis. It defines details such as multiplicity  control,  sensitivity  analyses,  methods  used  to  handle  missing data, subsets analyses prospectively identified, and the specific analyses performed on each subset of interest. For those populations defined, the SAP should provide clear  rules  for  who  is  included  in  each  analysis population.",
+        "relevance_score": 2.5367584228515625
+      },
+      {
+        "document_id": "statistical_analysis_plan_template",
+        "trial_id": null,
+        "source_type": "Clinical PDF",
+        "section": "1. Introduction",
+        "content": "The purpose of this Statistical Analysis Plan (SAP) is to provide a framework in which answers to the protocol objectives may be achieved in a statistically rigorous fashion, without bias or analytical deficiencies, following methods identified prior to database lock. Specifically, this plan has the following purposes:",
+        "relevance_score": 2.1759958267211914
+      },
+      {
+        "document_id": "statistical_analysis_plan_template",
+        "trial_id": null,
+        "source_type": "Clinical PDF",
+        "section": "1. Introduction",
+        "content": "This Statistical Analysis Plan (SAP) was prepared in accordance with the Protocol,  Protocol  Number ,  dated add  date . (Original  protocol version & date from which first SAP was created) .",
+        "relevance_score": 0.5947883725166321
+      },
+      {
+        "document_id": "statistical_analysis_plan_template",
+        "trial_id": null,
+        "source_type": "Clinical PDF",
+        "section": "3. Results",
+        "content": "The  following  document  is  organized  as  an  example  Statistical Analysis Plan. Not all sections mentioned here will be necessary for all trials/studies  and  some  may  be  omitted.  Furthermore,  there  may  be unique aspects of a study not contained herein that may be required for studies using novel methodology or having uncommon characteristics. The key is that the SAP contain detailed descriptions of all study populations, endpoints, and preplanned analyses to maximize study integrity  and  eliminate  or  limit  the  subjectivity  required  in  the  study ' s analysis phase.",
+        "relevance_score": 0.4687711000442505
+      },
+      {
+        "document_id": "statistical_analysis_plan_template",
+        "trial_id": null,
+        "source_type": "Clinical PDF",
+        "section": "1.1. The statistical analysis plan",
+        "content": "A number of principal investigators may have limited access to biostatisticians, a lack of biostatistical training, or no requirement to complete a timely statistical analysis plan (SAP). SAPs completed early will identify design or implementation weak points, improve protocols, remove the temptation for p-hacking, and enable proper peer review by stakeholders considering funding the trial. An SAP completed at the same time as the study protocol might be the only comprehensive method for at once optimizing sample size, identifying bias, and applying rigor to study design. This ordered corpus of SAP sections with detailed definitions and a variety of examples represents an omnibus of best practice methods offered by biostatistical practitioners inside and outside of industry. The article presents a protocol template for clinical research design, enabling statisticians, from beginners to advanced.",
+        "relevance_score": 0.23215535283088684
+      }
+    ],
+    "expected_keywords": [
+      "statistical analysis",
+      "clinical trial"
+    ],
+    "matched_keywords": [
+      "statistical analysis"
+    ],
+    "missing_keywords": [
+      "clinical trial"
+    ],
+    "keyword_coverage": 0.5,
+    "expected_numbers": [],
+    "matched_numbers": [],
+    "missing_numbers": []
+  },
+  {
+    "id": "q15",
+    "question": "What is the main subject of the immunotherapy toxicity review?",
+    "answer_correct": true,
+    "source_correct": true,
+    "answer": "The immunotherapy toxicity review (associated with NCT01375842) focuses on known immune-related adverse events (IRAEs), particularly those observed in patients with breast cancer. It summarizes their prevalence, severity, and outcomes, and discusses optimal strategies for early recognition, management, and cautious retreatment following the resolution of IRAEs.",
+    "sources": [
+      {
+        "document_id": "NCT05061017",
+        "trial_id": "NCT05061017",
+        "source_type": "ClinicalTrials.gov",
+        "section": "chunk_19",
+        "content": "ify for the study.\n  * Note: If subject received major surgery, they must have recovered adequately from the toxicity and/or complications from the intervention prior to starting therapy.\n  * Note: Subjects with autoimmune disorders of Grade 4 while on prior immunotherapy will be excluded. Subjects who developed autoimmune disorders of Grade ≤ 3 may enroll if the disorder has resolved to Grade ≤1 and the subject has been off systemic steroids at doses \\>10 mg/d for at least 2 weeks.\n* Active (i.e., symptomatic or growing) central nervous system (CNS) metastases.\n\n  * Note: Subjects with treate",
+        "relevance_score": 0.7339107990264893
+      },
+      {
+        "document_id": "immunotherapy_toxicity_review",
+        "trial_id": "NCT01375842",
+        "source_type": "Clinical PDF",
+        "section": "Abstract",
+        "content": "The widespread adoption of immunotherapy has revolutionized the treatment of various cancer types, including metastatic triple-negative breast cancer (TNBC), which has long been associated with poor prognostic outcomes. In particular, immune checkpoint inhibitors (ICIs) that target and inhibit programmed cell death-1 (PD-1) and programmed cell death ligand-1 (PD-L1), have shown promising results in the treatment of patients with metastatic TNBC. However, while manipulating the immune system to induce antitumor response, ICIs can also lead to a unique set of immune-related adverse events (IRAEs), which differ from standard chemotherapy toxicities due to their immune-based origin. These toxicities require highly specific management, including guidance from multidisciplinary specialists. The primary treatment strategy against IRAEs is systemic corticosteroid use, but additional treatment approaches may also involve supportive care, additional immunosuppression, and concurrent treatment delay or discontinuation. Given the rising prevalence of ICI therapy, it is essential to educate clinicians on the presentation and management of these potentially life-threatening events so that they are identified early and treated appropriately. Using data from recent clinical trials, this review will focus on known IRAEs, particularly those seen in patients with breast cancer, and will summarize their prevalence, severity, and outcomes. We will discuss optimal strategies for early recognition and management, as well as approaches toward cautious retreatment following resolution of IRAEs.",
+        "relevance_score": 0.15030191838741302
+      },
+      {
+        "document_id": "clinical_paper_1",
+        "trial_id": "NCT02950766",
+        "source_type": "Clinical PDF",
+        "section": "REFERENCES",
+        "content": "Puzanov I, Diab A, Abdallah K, et al. on behalf of the Society for Immunotherapy of Cancer Toxicity Management Working Group. Managing toxicities associated with immune checkpoint inhibitors: consensus recommendations from the Society for Immunotherapy of Cancer ( sitc )  Toxicity Management Working Group. J Immunother Cancer 2017;5:95.",
+        "relevance_score": -0.16253170371055603
+      },
+      {
+        "document_id": "clinical_paper_1",
+        "trial_id": "NCT02950766",
+        "source_type": "Clinical PDF",
+        "section": "REFERENCES",
+        "content": "Haanen JBAG, Carbonnel F, Robert C, et  al. on  behalf of the esmo Guidelines Committee. Management of toxicities from immunotherapy: esmo clinical  practice guidelines for  diagnosis, treatment and follow-up. Ann Oncol 2018; 29(suppl 4):iv264-6.",
+        "relevance_score": -1.4395827054977417
+      },
+      {
+        "document_id": "clinical_paper_1",
+        "trial_id": "NCT02950766",
+        "source_type": "Clinical PDF",
+        "section": "INTRODUCTION",
+        "content": "In this review article, we highlight the current standards of care in cancer immunotherapy, with a strong focus on immune checkpoint inhibitors ( ici s), their limitations and pitfalls, and promising novel approaches.",
+        "relevance_score": -1.5840435028076172
+      }
+    ],
+    "expected_keywords": [
+      "immunotherapy",
+      "toxicity"
+    ],
+    "matched_keywords": [
+      "immunotherapy",
+      "toxicity"
+    ],
+    "missing_keywords": [],
+    "keyword_coverage": 1.0,
+    "expected_numbers": [],
+    "matched_numbers": [],
+    "missing_numbers": []
+  },
+  {
+    "id": "q16",
+    "question": "What type of cancer is investigated in the A-BRAVE phase III breast immunotherapy trial?",
+    "answer_correct": false,
+    "source_correct": true,
+    "answer": "The A-BRAVE trial (NCT02926196) investigated triple-negative breast cancer (TNBC) in patients at high risk.",
+    "sources": [
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Background: The  A-BRAVE  trial  evaluated  the  efficacy  of  avelumab,  an  anti-programmed  death-ligand  1  (PD-L1) antibody, as adjuvant treatment of patients with early triple-negative breast cancer (TNBC) at high risk.",
+        "relevance_score": 6.113430976867676
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Patients  and  methods: A-BRAVE  is  a  phase  III  study  that  randomly  assigned  patients  with  high-risk  early  TNBC  to 1  year  of  avelumab  versus  observation,  after  completion  of  standard  surgery  and  (neo)adjuvant  chemotherapy. High-risk  was  defined  as  either:  (i) ≥ pN2/any  pT,  pN1/pT2,  or  pN0/pT3  after  primary  surgery  (stratum  A);  or  (ii) invasive  residual  disease  (breast  and/or  nodes)  after  neoadjuvant  chemotherapy  (stratum  B).  Coprimary  endpoints were  disease-free  survival  (DFS)  in  the  intention-to-treat  (ITT)  and  stratum  B  populations.  Secondary  endpoints were  overall  survival  (OS)  and  DFS  in  PD-L1-positive  patients.  PD-L1  was  evaluated  in  treatment-naïve  tumor samples by immunohistochemistry (73-10 RUO assay, Agilent Technologies) and digital pathology.",
+        "relevance_score": 5.9207658767700195
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "GRAPHICAL ABSTRACT",
+        "content": "A-BRAVE is an investigator-driven trial that was designed in 2015 before any efficacy data of ICIs in early TNBC were available, to investigate the efficacy of adjuvant avelumab in patients with early TNBC considered at high risk of relapse after  the  conclusion  of  treatment  with  curative  intent, including  chemotherapy  and  surgery.  Here  we  report  primary, secondary, and exploratory efficacy endpoints.",
+        "relevance_score": 4.827369689941406
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "Trial oversight",
+        "content": "The A-BRAVE trial (EUDRACT 2016-000189-45; NCT02926196) was an investigator-initiated, multicenter, unblinded, randomized trial conducted in 60 Italian and 7 UK hospitals (Supplementary  Table  S1,  available  at  https://doi.org/10. 1016/j.annonc.2025.08.005).  This  trial  was  developed  and sponsored  by  the  Department  of  Surgery,  Oncology  and Gastroenterology of the University of Padova, Italy.  The health care business of Merck KGaA, Darmstadt, Germany supported the trial with an unrestricted grant and supply of avelumab, but had no role in the design or conduct of the trial and was not involved in data collection or analysis, in the writing of the manuscript, or in the decision to submit it for publication. The trial was carried out in accordance with the standards of Good Clinical  Practice. The  authors  assume  responsibility  for  the accuracy and completeness of the data and analyses, as well as for the fidelity of the trial and this report to the protocol.",
+        "relevance_score": 4.389270782470703
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "DISCUSSION",
+        "content": "The phase III A-BRAVE trial did not meet its primary endpoint: the HR of 0.81 for DFS with avelumab versus control for patients with TNBC at high risk of relapse was not statistically significant, with consistent results in the ITT population and those  patients  with  iRD  after  neoadjuvant  chemotherapy (coprimary  endpoints). The  descriptive  analysis  of  the  secondary endpoint OS suggested an improvement with avelumab versus control (HR 0.66, 95% CI 0.45-0.97). Similarly, a descriptive analysis of post hoc DDFS indicated a reduction in risk with avelumab (HR 0.70, 95% CI: 0.50-0.96).",
+        "relevance_score": 4.3620171546936035
+      }
+    ],
+    "expected_keywords": [
+      "triple-negative breast cancer",
+      "high-risk",
+      "early"
+    ],
+    "matched_keywords": [
+      "triple-negative breast cancer",
+      "high-risk"
+    ],
+    "missing_keywords": [
+      "early"
+    ],
+    "keyword_coverage": 0.6666666666666666,
+    "expected_numbers": [],
+    "matched_numbers": [],
+    "missing_numbers": []
+  },
+  {
+    "id": "q17",
+    "question": "What was the treatment duration for avelumab in the A-BRAVE trial?",
+    "answer_correct": true,
+    "source_correct": true,
+    "answer": "In the A-BRAVE trial (NCT02926196), patients were assigned to receive 1 year of avelumab as adjuvant treatment.",
+    "sources": [
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "GRAPHICAL ABSTRACT",
+        "content": "A-BRAVE is an investigator-driven trial that was designed in 2015 before any efficacy data of ICIs in early TNBC were available, to investigate the efficacy of adjuvant avelumab in patients with early TNBC considered at high risk of relapse after  the  conclusion  of  treatment  with  curative  intent, including  chemotherapy  and  surgery.  Here  we  report  primary, secondary, and exploratory efficacy endpoints.",
+        "relevance_score": 5.868950843811035
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Background: The  A-BRAVE  trial  evaluated  the  efficacy  of  avelumab,  an  anti-programmed  death-ligand  1  (PD-L1) antibody, as adjuvant treatment of patients with early triple-negative breast cancer (TNBC) at high risk.",
+        "relevance_score": 5.581233501434326
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Patients  and  methods: A-BRAVE  is  a  phase  III  study  that  randomly  assigned  patients  with  high-risk  early  TNBC  to 1  year  of  avelumab  versus  observation,  after  completion  of  standard  surgery  and  (neo)adjuvant  chemotherapy. High-risk  was  defined  as  either:  (i) ≥ pN2/any  pT,  pN1/pT2,  or  pN0/pT3  after  primary  surgery  (stratum  A);  or  (ii) invasive  residual  disease  (breast  and/or  nodes)  after  neoadjuvant  chemotherapy  (stratum  B).  Coprimary  endpoints were  disease-free  survival  (DFS)  in  the  intention-to-treat  (ITT)  and  stratum  B  populations.  Secondary  endpoints were  overall  survival  (OS)  and  DFS  in  PD-L1-positive  patients.  PD-L1  was  evaluated  in  treatment-naïve  tumor samples by immunohistochemistry (73-10 RUO assay, Agilent Technologies) and digital pathology.",
+        "relevance_score": 5.423531532287598
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "DISCUSSION",
+        "content": "The phase III A-BRAVE trial did not meet its primary endpoint: the HR of 0.81 for DFS with avelumab versus control for patients with TNBC at high risk of relapse was not statistically significant, with consistent results in the ITT population and those  patients  with  iRD  after  neoadjuvant  chemotherapy (coprimary  endpoints). The  descriptive  analysis  of  the  secondary endpoint OS suggested an improvement with avelumab versus control (HR 0.66, 95% CI 0.45-0.97). Similarly, a descriptive analysis of post hoc DDFS indicated a reduction in risk with avelumab (HR 0.70, 95% CI: 0.50-0.96).",
+        "relevance_score": 4.649852275848389
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "Trial oversight",
+        "content": "The A-BRAVE trial (EUDRACT 2016-000189-45; NCT02926196) was an investigator-initiated, multicenter, unblinded, randomized trial conducted in 60 Italian and 7 UK hospitals (Supplementary  Table  S1,  available  at  https://doi.org/10. 1016/j.annonc.2025.08.005).  This  trial  was  developed  and sponsored  by  the  Department  of  Surgery,  Oncology  and Gastroenterology of the University of Padova, Italy.  The health care business of Merck KGaA, Darmstadt, Germany supported the trial with an unrestricted grant and supply of avelumab, but had no role in the design or conduct of the trial and was not involved in data collection or analysis, in the writing of the manuscript, or in the decision to submit it for publication. The trial was carried out in accordance with the standards of Good Clinical  Practice. The  authors  assume  responsibility  for  the accuracy and completeness of the data and analyses, as well as for the fidelity of the trial and this report to the protocol.",
+        "relevance_score": 3.9743399620056152
+      }
+    ],
+    "expected_keywords": [
+      "one year",
+      "avelumab"
+    ],
+    "matched_keywords": [
+      "one year",
+      "avelumab"
+    ],
+    "missing_keywords": [],
+    "keyword_coverage": 1.0,
+    "expected_numbers": [],
+    "matched_numbers": [],
+    "missing_numbers": []
+  },
+  {
+    "id": "q18",
+    "question": "What was the overall survival hazard ratio for avelumab versus control in A-BRAVE?",
+    "answer_correct": true,
+    "source_correct": true,
+    "answer": "In the A-BRAVE trial (NCT02926196), a descriptive analysis of the secondary endpoint overall survival (OS) showed a hazard ratio of 0.66 (95% CI 0.45-0.97) for avelumab versus control. This indicates a reduction in the hazard of death with avelumab.",
+    "sources": [
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "DISCUSSION",
+        "content": "The phase III A-BRAVE trial did not meet its primary endpoint: the HR of 0.81 for DFS with avelumab versus control for patients with TNBC at high risk of relapse was not statistically significant, with consistent results in the ITT population and those  patients  with  iRD  after  neoadjuvant  chemotherapy (coprimary  endpoints). The  descriptive  analysis  of  the  secondary endpoint OS suggested an improvement with avelumab versus control (HR 0.66, 95% CI 0.45-0.97). Similarly, a descriptive analysis of post hoc DDFS indicated a reduction in risk with avelumab (HR 0.70, 95% CI: 0.50-0.96).",
+        "relevance_score": 6.2343645095825195
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "Statistical analysis",
+        "content": "In  TNBC  patients  meeting  the  A-BRAVE  criteria  and randomly assigned to the control arm, the 3-year DFS rate was  expected  to  be  60%  (with  similar  estimates  for  both stratum  A  and  B). 3,6 An  improvement  to  73.6%  in  the 3-year  DFS  rate  was  the  target  effect  for  the  entire  ITT population. This  corresponds  to  an  expected  hazard  ratio (HR)  of  0.6  for  the  avelumab  arm versus the  control  arm, assuming an exponential distribution.",
+        "relevance_score": 5.46278715133667
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "Efficacy",
+        "content": "A total of 108 patients died (94.4% breast cancer-related deaths;  Supplementary  Table  S2,  available  at  https://doi. org/10.1016/j.annonc.2025.08.005):  46  in  the  avelumab arm (19.6%) and 62 (26.8%) in the control arm. According to a descriptive analysis of the secondary endpoint OS, avelumab was associated with a reduction in the hazard of death in the whole ITT: HR 0.66, 95% CI 0.45-0.97 (Figure 3A). The 3-year overall survival (OS) estimates in the avelumab and control arms were 84.8% (95% CI 79.5% to 88.8%) and 76.3% (95% CI 70.1% to 81.3%), respectively.",
+        "relevance_score": 4.5896100997924805
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Results: From June 2016 to October 2020, 466 patients were randomly assigned: 383 entered stratum B (82%) and 83 entered stratum A (18%). At a median follow-up of 52.1 months, avelumab did not significantly improve DFS in the ITT population [hazard ratio (HR) 0.81, 95% confidence interval (CI) 0.61-1.09, P = 0.172; 3-year DFS estimates were 68.3% for avelumab versus 63.2%], or in stratum B (HR 0.80, 95% CI 0.58-1.10, P = 0.170; 3-year DFS estimates were 66.9% for  avelumab versus 60.7%). In a descriptive analysis, avelumab reduced the hazard of OS events: HR 0.66, 95% CI 0.45-0.97. The 3-year  OS estimates for avelumab and control arm were 84.8% (95% CI 79.5% to 88.8%) and 76.3% (95%  CI  70.1%  to  81.3%),  respectively.  PD-L1  status  was  prognostic  but  not  predictive  for  avelumab  benefit  in terms of DFS (test for interaction P = 0.155).",
+        "relevance_score": 4.546626091003418
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "Efficacy",
+        "content": "Similarly,  avelumab did  not  significantly  improve  DFS  in stratum B: HR 0.80, 95% CI 0.58-1.10, P = 0.172 (Figure  2B).  The  3-year  DFS  estimates  for  avelumab  and control  arm  in  stratum  B  were  66.9%  (95%  CI  59.8%  to 73.1%) and 60.7% (95% CI 53.3% to 67.3%), respectively.",
+        "relevance_score": 3.2280004024505615
+      }
+    ],
+    "expected_keywords": [
+      "overall survival",
+      "0.66"
+    ],
+    "matched_keywords": [
+      "overall survival",
+      "0.66"
+    ],
+    "missing_keywords": [],
+    "keyword_coverage": 1.0,
+    "expected_numbers": [
+      "0.66"
+    ],
+    "matched_numbers": [
+      "0.66"
+    ],
+    "missing_numbers": []
+  },
+  {
+    "id": "q19",
+    "question": "What was the disease-free survival hazard ratio for avelumab versus control in the A-BRAVE intention-to-treat population?",
+    "answer_correct": true,
+    "source_correct": true,
+    "answer": "In the A-BRAVE trial (NCT02926196), the disease-free survival hazard ratio for avelumab versus control in the intention-to-treat population was 0.81 (95% CI 0.61-1.09, P = 0.172).",
+    "sources": [
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "DISCUSSION",
+        "content": "The phase III A-BRAVE trial did not meet its primary endpoint: the HR of 0.81 for DFS with avelumab versus control for patients with TNBC at high risk of relapse was not statistically significant, with consistent results in the ITT population and those  patients  with  iRD  after  neoadjuvant  chemotherapy (coprimary  endpoints). The  descriptive  analysis  of  the  secondary endpoint OS suggested an improvement with avelumab versus control (HR 0.66, 95% CI 0.45-0.97). Similarly, a descriptive analysis of post hoc DDFS indicated a reduction in risk with avelumab (HR 0.70, 95% CI: 0.50-0.96).",
+        "relevance_score": 5.0055742263793945
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Patients  and  methods: A-BRAVE  is  a  phase  III  study  that  randomly  assigned  patients  with  high-risk  early  TNBC  to 1  year  of  avelumab  versus  observation,  after  completion  of  standard  surgery  and  (neo)adjuvant  chemotherapy. High-risk  was  defined  as  either:  (i) ≥ pN2/any  pT,  pN1/pT2,  or  pN0/pT3  after  primary  surgery  (stratum  A);  or  (ii) invasive  residual  disease  (breast  and/or  nodes)  after  neoadjuvant  chemotherapy  (stratum  B).  Coprimary  endpoints were  disease-free  survival  (DFS)  in  the  intention-to-treat  (ITT)  and  stratum  B  populations.  Secondary  endpoints were  overall  survival  (OS)  and  DFS  in  PD-L1-positive  patients.  PD-L1  was  evaluated  in  treatment-naïve  tumor samples by immunohistochemistry (73-10 RUO assay, Agilent Technologies) and digital pathology.",
+        "relevance_score": 4.790255546569824
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "Statistical analysis",
+        "content": "In  TNBC  patients  meeting  the  A-BRAVE  criteria  and randomly assigned to the control arm, the 3-year DFS rate was  expected  to  be  60%  (with  similar  estimates  for  both stratum  A  and  B). 3,6 An  improvement  to  73.6%  in  the 3-year  DFS  rate  was  the  target  effect  for  the  entire  ITT population. This  corresponds  to  an  expected  hazard  ratio (HR)  of  0.6  for  the  avelumab  arm versus the  control  arm, assuming an exponential distribution.",
+        "relevance_score": 4.737297058105469
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Results: From June 2016 to October 2020, 466 patients were randomly assigned: 383 entered stratum B (82%) and 83 entered stratum A (18%). At a median follow-up of 52.1 months, avelumab did not significantly improve DFS in the ITT population [hazard ratio (HR) 0.81, 95% confidence interval (CI) 0.61-1.09, P = 0.172; 3-year DFS estimates were 68.3% for avelumab versus 63.2%], or in stratum B (HR 0.80, 95% CI 0.58-1.10, P = 0.170; 3-year DFS estimates were 66.9% for  avelumab versus 60.7%). In a descriptive analysis, avelumab reduced the hazard of OS events: HR 0.66, 95% CI 0.45-0.97. The 3-year  OS estimates for avelumab and control arm were 84.8% (95% CI 79.5% to 88.8%) and 76.3% (95%  CI  70.1%  to  81.3%),  respectively.  PD-L1  status  was  prognostic  but  not  predictive  for  avelumab  benefit  in terms of DFS (test for interaction P = 0.155).",
+        "relevance_score": 2.4668641090393066
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "Efficacy",
+        "content": "A total of 108 patients died (94.4% breast cancer-related deaths;  Supplementary  Table  S2,  available  at  https://doi. org/10.1016/j.annonc.2025.08.005):  46  in  the  avelumab arm (19.6%) and 62 (26.8%) in the control arm. According to a descriptive analysis of the secondary endpoint OS, avelumab was associated with a reduction in the hazard of death in the whole ITT: HR 0.66, 95% CI 0.45-0.97 (Figure 3A). The 3-year overall survival (OS) estimates in the avelumab and control arms were 84.8% (95% CI 79.5% to 88.8%) and 76.3% (95% CI 70.1% to 81.3%), respectively.",
+        "relevance_score": 2.095625877380371
+      }
+    ],
+    "expected_keywords": [
+      "0.81",
+      "disease-free survival",
+      "intention-to-treat"
+    ],
+    "matched_keywords": [
+      "0.81",
+      "disease-free survival",
+      "intention-to-treat"
+    ],
+    "missing_keywords": [],
+    "keyword_coverage": 1.0,
+    "expected_numbers": [
+      "0.81"
+    ],
+    "matched_numbers": [
+      "0.81"
+    ],
+    "missing_numbers": []
+  },
+  {
+    "id": "q20",
+    "question": "What was the conclusion of the A-BRAVE trial regarding adjuvant avelumab?",
+    "answer_correct": false,
+    "source_correct": true,
+    "answer": "The phase III A-BRAVE trial (NCT02926196) concluded that its primary endpoint was not met. The hazard ratio (HR) for disease-free survival (DFS) was 0.81 with avelumab versus control in patients with triple-negative breast cancer (TNBC) at high risk of relapse, but this was not statistically significant. This result was consistent across the intention-to-treat (ITT) population and patients with invasive residual disease (iRD) after neoadjuvant chemotherapy, which were coprimary endpoints.\n\nDescriptive analyses of secondary endpoints suggested potential improvements with avelumab:\n*   Overall survival (OS) showed an HR of 0.66 (95% CI 0.45-0.97).\n*   Post hoc distant disease-free survival (DDFS) indicated a reduction in risk with an HR of 0.70 (95% CI: 0.50-0.96).",
+    "sources": [
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "GRAPHICAL ABSTRACT",
+        "content": "A-BRAVE is an investigator-driven trial that was designed in 2015 before any efficacy data of ICIs in early TNBC were available, to investigate the efficacy of adjuvant avelumab in patients with early TNBC considered at high risk of relapse after  the  conclusion  of  treatment  with  curative  intent, including  chemotherapy  and  surgery.  Here  we  report  primary, secondary, and exploratory efficacy endpoints.",
+        "relevance_score": 7.613698959350586
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Background: The  A-BRAVE  trial  evaluated  the  efficacy  of  avelumab,  an  anti-programmed  death-ligand  1  (PD-L1) antibody, as adjuvant treatment of patients with early triple-negative breast cancer (TNBC) at high risk.",
+        "relevance_score": 6.48058557510376
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "Trial oversight",
+        "content": "The A-BRAVE trial (EUDRACT 2016-000189-45; NCT02926196) was an investigator-initiated, multicenter, unblinded, randomized trial conducted in 60 Italian and 7 UK hospitals (Supplementary  Table  S1,  available  at  https://doi.org/10. 1016/j.annonc.2025.08.005).  This  trial  was  developed  and sponsored  by  the  Department  of  Surgery,  Oncology  and Gastroenterology of the University of Padova, Italy.  The health care business of Merck KGaA, Darmstadt, Germany supported the trial with an unrestricted grant and supply of avelumab, but had no role in the design or conduct of the trial and was not involved in data collection or analysis, in the writing of the manuscript, or in the decision to submit it for publication. The trial was carried out in accordance with the standards of Good Clinical  Practice. The  authors  assume  responsibility  for  the accuracy and completeness of the data and analyses, as well as for the fidelity of the trial and this report to the protocol.",
+        "relevance_score": 5.057219505310059
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "DISCUSSION",
+        "content": "The phase III A-BRAVE trial did not meet its primary endpoint: the HR of 0.81 for DFS with avelumab versus control for patients with TNBC at high risk of relapse was not statistically significant, with consistent results in the ITT population and those  patients  with  iRD  after  neoadjuvant  chemotherapy (coprimary  endpoints). The  descriptive  analysis  of  the  secondary endpoint OS suggested an improvement with avelumab versus control (HR 0.66, 95% CI 0.45-0.97). Similarly, a descriptive analysis of post hoc DDFS indicated a reduction in risk with avelumab (HR 0.70, 95% CI: 0.50-0.96).",
+        "relevance_score": 4.8999810218811035
+      },
+      {
+        "document_id": "phase3_breast_immunotherapy_trial",
+        "trial_id": "NCT02926196",
+        "source_type": "Clinical PDF",
+        "section": "A-BRAVE trial: a phase III randomized trial with anti-PD-L1 avelumab in high-risk triple-negative early breast cancer patients",
+        "content": "Patients  and  methods: A-BRAVE  is  a  phase  III  study  that  randomly  assigned  patients  with  high-risk  early  TNBC  to 1  year  of  avelumab  versus  observation,  after  completion  of  standard  surgery  and  (neo)adjuvant  chemotherapy. High-risk  was  defined  as  either:  (i) ≥ pN2/any  pT,  pN1/pT2,  or  pN0/pT3  after  primary  surgery  (stratum  A);  or  (ii) invasive  residual  disease  (breast  and/or  nodes)  after  neoadjuvant  chemotherapy  (stratum  B).  Coprimary  endpoints were  disease-free  survival  (DFS)  in  the  intention-to-treat  (ITT)  and  stratum  B  populations.  Secondary  endpoints were  overall  survival  (OS)  and  DFS  in  PD-L1-positive  patients.  PD-L1  was  evaluated  in  treatment-naïve  tumor samples by immunohistochemistry (73-10 RUO assay, Agilent Technologies) and digital pathology.",
+        "relevance_score": 4.084568977355957
+      }
+    ],
+    "expected_keywords": [
+      "did not improve",
+      "disease-free survival",
+      "overall survival"
+    ],
+    "matched_keywords": [
+      "disease-free survival",
+      "overall survival"
+    ],
+    "missing_keywords": [
+      "did not improve"
+    ],
+    "keyword_coverage": 0.6666666666666666,
+    "expected_numbers": [],
+    "matched_numbers": [],
+    "missing_numbers": []
   }
 ]
