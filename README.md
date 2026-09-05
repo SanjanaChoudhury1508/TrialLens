@@ -1146,7 +1146,7 @@ DB_HOST=127.0.0.1
 DB_PORT=5433
 DB_NAME=triallens
 DB_USER=postgres
-DB_PASSWORD=postgres
+DB_PASSWORD=<your-db-password>
 
 GEMINI_API_KEY=<your-api-key>
 ```
