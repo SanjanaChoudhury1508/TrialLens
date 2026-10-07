@@ -5,24 +5,55 @@ def aggregate_evidence(state: TrialLensState) -> TrialLensState:
 
     evidence = []
 
+    # =========================================================
     # RAG / PDF evidence
-    for document in state.get("retrieved_documents", []):
+    # =========================================================
+
+    for document in state.get(
+        "retrieved_documents",
+        [],
+    ):
         evidence.append({
             "source_type": "document",
             **document,
         })
 
+    # =========================================================
     # ClinicalTrials.gov structured evidence
-    for result in state.get("structured_results", []):
+    # =========================================================
+
+    for result in state.get(
+        "structured_results",
+        [],
+    ):
         evidence.append({
             "source_type": "structured",
             **result,
         })
 
+    # =========================================================
     # FAERS / safety evidence
-    for result in state.get("safety_results", []):
+    # =========================================================
+
+    for result in state.get(
+        "safety_results",
+        [],
+    ):
         evidence.append({
             "source_type": "safety",
+            **result,
+        })
+
+    # =========================================================
+    # Structured table evidence
+    # =========================================================
+
+    for result in state.get(
+        "table_results",
+        [],
+    ):
+        evidence.append({
+            "source_type": "table",
             **result,
         })
 

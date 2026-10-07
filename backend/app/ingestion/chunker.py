@@ -5,12 +5,17 @@ from app.chunk_models import DocumentChunk
 
 class SemanticChunker:
 
-    def chunk(self, document, document_id=None) -> list[DocumentChunk]:
+    def chunk(
+        self,
+        document,
+        document_id=None,
+    ) -> list[DocumentChunk]:
         """
         Convert a DoclingDocument into DocumentChunk objects.
 
-        Docling stores document content as structured items rather than
-        the old custom ParsedDocument.sections structure.
+        Text content is converted into semantic chunks.
+        Tables are intentionally skipped here and handled by the
+        dedicated table extraction pipeline.
         """
 
         chunks = []
@@ -22,7 +27,29 @@ class SemanticChunker:
 
         for item, _level in document.iterate_items():
 
+            # -------------------------------------------------
+            # Identify the Docling item type
+            # -------------------------------------------------
+
+            label = getattr(item, "label", None)
+
+            label_name = ""
+
+            if label is not None:
+                label_name = getattr(
+                    label,
+                    "value",
+                    str(label),
+                ).lower()
+
+            # Tables are handled separately.
+            if label_name == "table":
+                continue
+
+            # -------------------------------------------------
             # Only process items that contain text
+            # -------------------------------------------------
+
             if not hasattr(item, "text"):
                 continue
 
@@ -31,24 +58,36 @@ class SemanticChunker:
             if not text:
                 continue
 
+            # -------------------------------------------------
             # Use headings as section names
-            label = getattr(item, "label", None)
+            # -------------------------------------------------
 
-            if label is not None:
-                label_name = getattr(label, "value", str(label)).lower()
+            if label_name in {
+                "title",
+                "section_header",
+                "heading",
+            }:
+                current_section = text
+                continue
 
-                if label_name in {"title", "section_header", "heading"}:
-                    current_section = text
-                    continue
-
+            # -------------------------------------------------
             # Get page number when available
+            # -------------------------------------------------
+
             page = None
 
             if getattr(item, "prov", None):
                 try:
                     page = item.prov[0].page_no
-                except (AttributeError, IndexError):
+                except (
+                    AttributeError,
+                    IndexError,
+                ):
                     page = None
+
+            # -------------------------------------------------
+            # Create text chunk
+            # -------------------------------------------------
 
             chunks.append(
                 DocumentChunk(
@@ -59,7 +98,11 @@ class SemanticChunker:
                     page=page,
                     metadata={
                         "source": "pdf",
-                        "docling_label": str(label) if label else None,
+                        "docling_label": (
+                            str(label)
+                            if label
+                            else None
+                        ),
                     },
                 )
             )
@@ -86,7 +129,10 @@ class SemanticChunker:
 
         while start < len(text):
 
-            end = min(start + chunk_size, len(text))
+            end = min(
+                start + chunk_size,
+                len(text),
+            )
 
             chunk = text[start:end].strip()
 

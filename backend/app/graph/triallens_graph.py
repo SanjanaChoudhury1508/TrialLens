@@ -1,5 +1,5 @@
 from langgraph.graph import END, START, StateGraph
-
+from app.agents.table import table_agent
 from app.agents.state import TrialLensState
 from app.agents.router_agent import route_question
 from app.agents.retriever_agent import retriever_agent
@@ -37,6 +37,11 @@ def dispatch_agents(state: TrialLensState):
 
         current_state.update(result)
 
+        if "table" in agents:
+            result = table_agent.run(current_state)
+
+            current_state.update(result)
+
     # Return only state updates that should be merged by LangGraph.
     return {
         "retrieved_documents": current_state.get(
@@ -47,6 +52,9 @@ def dispatch_agents(state: TrialLensState):
         ),
         "safety_results": current_state.get(
             "safety_results", []
+        ),
+         "table_results": current_state.get(
+            "table_results", []
         ),
         "errors": current_state.get(
             "errors", []

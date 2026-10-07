@@ -4,8 +4,11 @@ import uuid
 
 from app.ingestion.parser import TrialDocumentParser
 from app.ingestion.chunker import SemanticChunker
+from app.ingestion.table_extractor import TableExtractor
+
 from app.services.embedding_service import EmbeddingService
 from app.database.vector_store import VectorStore
+
 from app.chunk_models import DocumentChunk
 
 
@@ -15,22 +18,35 @@ class PDFIngestionManager:
 
     PDF
       ↓
-    Parse
+    Parse with Docling
       ↓
     Extract document metadata
       ↓
-    Chunk
-      ↓
-    Embed
-      ↓
-    Store
+      ┌──────────────────────┐
+      │                      │
+      ▼                      ▼
+    Text                  Tables
+      │                      │
+      ▼                      ▼
+    Chunker            Table Extractor
+      │                      │
+      ▼                      ▼
+    Embed              Structured Table
+      │                      │
+      ▼                      ▼
+    document_chunks     document_tables
     """
 
     def __init__(self):
 
         self.parser = TrialDocumentParser()
+
         self.chunker = SemanticChunker()
+
+        self.table_extractor = TableExtractor()
+
         self.embedder = EmbeddingService()
+
         self.store = VectorStore()
 
     def extract_trial_id(self, parsed_document):
@@ -44,7 +60,9 @@ class PDFIngestionManager:
 
         try:
             text = parsed_document.export_to_text()
+
         except AttributeError:
+
             text = ""
 
             for item, _level in parsed_document.iterate_items():
@@ -101,6 +119,7 @@ class PDFIngestionManager:
 
         if trial_id:
             print(f"✓ Trial ID detected: {trial_id}")
+
         else:
             print("⚠ No NCT Trial ID detected")
 
@@ -112,8 +131,12 @@ class PDFIngestionManager:
             document_id
         )
 
+        self.store.delete_document_tables(
+            document_id
+        )
+
         # ------------------------------------------
-        # Chunk
+        # Text chunking
         # ------------------------------------------
 
         chunks = self.chunker.chunk(
@@ -121,13 +144,24 @@ class PDFIngestionManager:
             document_id=document_id,
         )
 
-        print(f"✓ {len(chunks)} chunks created")
+        print(f"✓ {len(chunks)} text chunks created")
 
         # ------------------------------------------
-        # Store
+        # Table extraction
         # ------------------------------------------
 
-        indexed = 0
+        tables = self.table_extractor.extract(
+            parsed_document,
+            document_id=document_id,
+        )
+
+        print(f"✓ {len(tables)} tables extracted")
+
+        # ------------------------------------------
+        # Store text chunks
+        # ------------------------------------------
+
+        indexed_chunks = 0
 
         for chunk in chunks:
 
@@ -145,7 +179,7 @@ class PDFIngestionManager:
                     "source": "pdf",
                     "filename": pdf_path.name,
                     "trial_id": trial_id,
-                    **chunk.metadata,
+                    **(chunk.metadata or {}),
                 },
             )
 
@@ -154,13 +188,39 @@ class PDFIngestionManager:
                 embedding,
             )
 
-            indexed += 1
+            indexed_chunks += 1
 
-        print(f"✓ Indexed {indexed} chunks")
+        print(
+            f"✓ Indexed {indexed_chunks} text chunks"
+        )
+
+        # ------------------------------------------
+        # Store structured tables
+        # ------------------------------------------
+
+        indexed_tables = 0
+
+        for table in tables:
+
+            self.store.insert_table(
+                table,
+                trial_id=trial_id,
+            )
+
+            indexed_tables += 1
+
+        print(
+            f"✓ Indexed {indexed_tables} tables"
+        )
+
+        # ------------------------------------------
+        # Final result
+        # ------------------------------------------
 
         return {
             "success": True,
             "document": document_id,
             "trial_id": trial_id,
-            "chunks": indexed,
+            "chunks": indexed_chunks,
+            "tables": indexed_tables,
         }

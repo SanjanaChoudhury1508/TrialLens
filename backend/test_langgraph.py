@@ -3,34 +3,32 @@ from app.graph.triallens_graph import trial_lens_graph
 
 def main():
 
-    result = trial_lens_graph.invoke(
-        {
-            "question": (
-                "What safety signals and adverse events have been "
-                "reported for avelumab, and what is the current status "
-                "of NCT02926196?"
-            )
-        }
+    question = (
+        "What were the median ages of patients "
+        "in the avelumab and control groups?"
     )
-    print("\n=== TrialLens LangGraph Test ===")
 
-    print("Question:", result["question"])
-    print("Intent:", result.get("intent"))
-    print("Agents:", result.get("agents_to_run"))
+    print("\n=== TrialLens Table LangGraph Test ===")
+    print(f"Question: {question}")
+
+    result = trial_lens_graph.invoke({
+        "question": question,
+    })
+
+    print("\nIntent:")
+    print(result.get("intent"))
+
+    print("\nAgents:")
+    print(result.get("agents_to_run"))
 
     print(
-        "Retrieved documents:",
+        "\nRetrieved documents:",
         len(result.get("retrieved_documents", []))
     )
 
     print(
-        "Structured results:",
-        len(result.get("structured_results", []))
-    )
-
-    print(
-        "Safety results:",
-        len(result.get("safety_results", []))
+        "Table results:",
+        len(result.get("table_results", []))
     )
 
     print(
@@ -39,20 +37,23 @@ def main():
     )
 
     print("\nDraft answer:")
-    print(result.get("draft_answer", ""))
+    print(result.get("draft_answer"))
 
     print("\nVerification passed:")
     print(result.get("verification_passed"))
 
     print("\nVerification issues:")
-    for issue in result.get("verification_issues", []):
-        print("-", issue)
+    print(result.get("verification_issues"))
 
     print("\nFinal answer:")
-    print(result.get("final_answer", ""))
+    print(result.get("final_answer"))
 
     print("\nTrace:")
-    print(" -> ".join(result.get("execution_trace", [])))
+    print(
+        " -> ".join(
+            result.get("execution_trace", [])
+        )
+    )
 
 
 if __name__ == "__main__":

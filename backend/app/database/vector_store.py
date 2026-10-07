@@ -60,6 +60,187 @@ class VectorStore:
 
         self.conn.commit()
 
+   # =========================================================
+   # INSERT TABLE
+   # =========================================================
+
+    def insert_table(self, table, trial_id=None):
+        with self.conn.cursor() as cur:
+            metadata = dict(table.metadata or {})
+
+            if trial_id:
+                metadata["trial_id"] = trial_id
+
+            cur.execute(
+                """
+                INSERT INTO document_tables
+                (
+                    table_id,
+                    document_id,
+                    trial_id,
+                    title,
+                    headers,
+                    rows,
+                    page,
+                    metadata
+                )
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                ON CONFLICT (table_id)
+                DO UPDATE SET
+                    document_id = EXCLUDED.document_id,
+                    trial_id = EXCLUDED.trial_id,
+                    title = EXCLUDED.title,
+                    headers = EXCLUDED.headers,
+                    rows = EXCLUDED.rows,
+                    page = EXCLUDED.page,
+                    metadata = EXCLUDED.metadata
+                """,
+                (
+                    table.table_id,
+                    table.document_id,
+                    trial_id,
+                    table.title,
+                    Json(table.headers),
+                    Json(table.rows),
+                    table.page,
+                    Json(metadata),
+                ),
+            )
+
+        self.conn.commit()
+
+    # =========================================================
+    # DELETE TABLE
+    # =========================================================
+    def delete_document_tables(self, document_id):
+        with self.conn.cursor() as cur:
+            cur.execute(
+                """
+                DELETE FROM document_tables
+                WHERE document_id = %s;
+                """,
+                (document_id,),
+            )
+
+            deleted = cur.rowcount
+
+        self.conn.commit()
+
+        return deleted
+
+        # =========================================================
+    # TABLE SEARCH
+    # =========================================================
+
+    def search_tables(
+        self,
+        query: str,
+        top_k: int = 5,
+        trial_id: str | None = None,
+    ):
+        """
+        Search structured document tables using
+        token-based PostgreSQL text matching.
+
+        Tables remain separate from document_chunks.
+        """
+
+        query = query.strip()
+
+        if not query:
+            return []
+
+        # Split the question into useful search terms.
+        terms = [
+            term.lower()
+            for term in re.findall(r"\b[a-zA-Z0-9]+\b", query)
+            if len(term) >= 3
+        ]
+
+        if not terms:
+            return []
+
+        # Build one condition for each term.
+        term_conditions = []
+
+        for _ in terms:
+            term_conditions.append(
+                """
+                (
+                    title ILIKE %s
+                    OR headers::text ILIKE %s
+                    OR rows::text ILIKE %s
+                )
+                """
+            )
+
+        where_terms = " OR ".join(term_conditions)
+
+        parameters = []
+
+        for term in terms:
+            pattern = f"%{term}%"
+            parameters.extend(
+                [pattern, pattern, pattern]
+            )
+
+        if trial_id:
+
+            sql = f"""
+                SELECT
+                    table_id,
+                    document_id,
+                    trial_id,
+                    title,
+                    headers,
+                    rows,
+                    page,
+                    metadata
+                FROM document_tables
+                WHERE
+                    trial_id = %s
+                    AND ({where_terms})
+                ORDER BY page NULLS LAST
+                LIMIT %s;
+            """
+
+            parameters.insert(0, trial_id.upper())
+            parameters.append(top_k)
+
+        else:
+
+            sql = f"""
+                SELECT
+                    table_id,
+                    document_id,
+                    trial_id,
+                    title,
+                    headers,
+                    rows,
+                    page,
+                    metadata
+                FROM document_tables
+                WHERE
+                    ({where_terms})
+                ORDER BY page NULLS LAST
+                LIMIT %s;
+            """
+
+            parameters.append(top_k)
+
+        with self.conn.cursor(
+            cursor_factory=RealDictCursor
+        ) as cur:
+
+            cur.execute(
+                sql,
+                parameters,
+            )
+
+            results = cur.fetchall()
+
+        return [dict(row) for row in results]
+
     # =========================================================
     # DELETE DOCUMENT
     # =========================================================
