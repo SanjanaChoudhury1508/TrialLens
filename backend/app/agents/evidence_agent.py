@@ -53,8 +53,8 @@ def aggregate_evidence(state: TrialLensState) -> TrialLensState:
         [],
     ):
         evidence.append({
-            "source_type": "table",
             **result,
+            "source_type": "table"
         })
 
     return {

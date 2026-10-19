@@ -8,7 +8,7 @@ class PromptBuilder:
         question: str,
         chunks,
         conversation_context: str | None = None,
-    ):
+    ) -> str:
 
         evidence = []
 
@@ -18,31 +18,65 @@ class PromptBuilder:
                 "source_type",
                 chunk.get("source", "Unknown"),
             )
-                        # -------------------------------------------------
+
+            # -------------------------------------------------
+            # STRUCTURED TABLE QA EVIDENCE
+            # -------------------------------------------------
+
+            if source_type == "table":
+
+                answer = str(chunk.get("answer", "") or "").strip()
+                headers = chunk.get("headers", [])
+                rows = chunk.get("rows", [])
+
+                formatted_headers = " | ".join(
+                    str(header) for header in headers
+                )
+
+                formatted_rows = "\n".join(
+                    " | ".join(str(value) for value in row)
+                    for row in rows
+                )
+
+                evidence.append(
+                    f"""
+========== Evidence {i} ==========
+
+Source Type:
+Clinical PDF Table
+
+Clinical Trial ID:
+{chunk.get("trial_id", "Not identified")}
+
+Table Title:
+{chunk.get("title", "Not available")}
+
+Page:
+{chunk.get("page", "Not available")}
+
+Table QA Answer:
+{answer if answer else "No table QA answer available."}
+
+Column Headers:
+{formatted_headers}
+
+Table Rows:
+{formatted_rows}
+"""
+                )
+
+                continue
+
+            # -------------------------------------------------
             # SAFETY / FAERS EVIDENCE
             # -------------------------------------------------
 
-            if chunk.get("source_type") == "safety":
+            if source_type == "safety":
 
-                drug = chunk.get(
-                    "drug",
-                    "Not identified",
-                )
-
-                records = chunk.get(
-                    "records_retrieved",
-                    0,
-                )
-
-                serious_events = chunk.get(
-                    "serious_events",
-                    0,
-                )
-
-                top_reactions = chunk.get(
-                    "top_reactions",
-                    [],
-                )
+                drug = chunk.get("drug", "Not identified")
+                records = chunk.get("records_retrieved", 0)
+                serious_events = chunk.get("serious_events", 0)
+                top_reactions = chunk.get("top_reactions", [])
 
                 evidence.append(
                     f"""
@@ -73,18 +107,22 @@ They do not establish that the drug caused the reported event.
                 )
 
                 continue
+
             # -------------------------------------------------
-            # STRUCTURED DATA EVIDENCE
+            # STRUCTURED CLINICALTRIALS.GOV EVIDENCE
             # -------------------------------------------------
 
             if "data" in chunk:
 
                 data = chunk.get("data", {})
 
-                nct_id = data.get(
-                    "nct_id",
-                    "Not identified",
-                )
+                nct_id = data.get("nct_id", "Not identified")
+                phases = data.get("phase", [])
+
+                if isinstance(phases, list):
+                    phase_text = ", ".join(str(p) for p in phases)
+                else:
+                    phase_text = str(phases)
 
                 evidence.append(
                     f"""
@@ -109,7 +147,7 @@ Overall Status:
 {data.get("overall_status", "Not available")}
 
 Phase:
-{", ".join(data.get("phase", []))}
+{phase_text}
 
 Study Type:
 {data.get("study_type", "Not available")}
@@ -143,27 +181,13 @@ Summary:
             # DOCUMENT / RAG EVIDENCE
             # -------------------------------------------------
 
-            document_id = chunk.get(
-                "document_id",
-                "Unknown",
-            )
-
+            document_id = chunk.get("document_id", "Unknown")
             trial_id = chunk.get("trial_id")
-
-            section = chunk.get(
-                "section",
-                "Unknown",
-            )
-
-            content = chunk.get(
-                "content",
-                "",
-            )
+            section = chunk.get("section", "Unknown")
+            content = chunk.get("content", "")
 
             trial_reference = (
-                trial_id
-                if trial_id
-                else "Not identified"
+                trial_id if trial_id else "Not identified"
             )
 
             evidence.append(
@@ -271,11 +295,9 @@ IMPORTANT GROUNDING RULES:
     terminology, outcomes, treatments, or statistics.
 
 13. Do not expose internal retrieval metadata such as:
-    - document filenames
     - relevance scores
     - reranker scores
     - evidence numbers
-    - "Source:" labels
     - internal database identifiers
 
 14. Write the final answer naturally for a clinical research user.
@@ -288,6 +310,17 @@ IMPORTANT GROUNDING RULES:
     statistical significance when explicitly provided.
 
 17. Do not provide medical advice or treatment recommendations.
+
+18. For table evidence, use the Table QA Answer when it directly answers
+    the question. Check it against the supplied table headers and rows.
+    Preserve numerical values and units exactly as reported. If the answer
+    conflicts with the table, prioritize the table and report only what
+    the table supports. When a question asks for a median and the table
+    provides a corresponding range, include that range in the answer.
+
+19. Table evidence is valid evidence. Do not declare the answer
+    insufficient merely because the requested values come from a table
+    rather than narrative document text.
 
 CONTEXT RULE:
 

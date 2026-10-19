@@ -10,39 +10,32 @@ from app.agents.synthesis_agent import synthesis_agent
 from app.agents.critic_agent import verify_answer
 
 
+
 def dispatch_agents(state: TrialLensState):
     """
     Execute every specialist selected by the router.
 
-    This keeps the orchestration explicit:
     Router -> selected specialist agents -> Evidence.
     """
-
     agents = state.get("agents_to_run", [])
-
     current_state = dict(state)
 
     if "retriever" in agents:
         result = retriever_agent.run(current_state)
-
         current_state.update(result)
 
     if "structured" in agents:
         result = structured_agent.run(current_state)
-
         current_state.update(result)
 
     if "safety" in agents:
         result = safety_agent.run(current_state)
-
         current_state.update(result)
 
-        if "table" in agents:
-            result = table_agent.run(current_state)
+    if "table" in agents:
+        result = table_agent.run(current_state)
+        current_state.update(result)
 
-            current_state.update(result)
-
-    # Return only state updates that should be merged by LangGraph.
     return {
         "retrieved_documents": current_state.get(
             "retrieved_documents", []
@@ -53,15 +46,11 @@ def dispatch_agents(state: TrialLensState):
         "safety_results": current_state.get(
             "safety_results", []
         ),
-         "table_results": current_state.get(
+        "table_results": current_state.get(
             "table_results", []
         ),
-        "errors": current_state.get(
-            "errors", []
-        ),
-        "execution_trace": [
-            "specialist_dispatch"
-        ],
+        "errors": current_state.get("errors", []),
+        "execution_trace": ["specialist_dispatch"],
     }
 
 

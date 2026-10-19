@@ -20,6 +20,7 @@ class SynthesisAgent:
             )
 
             answer = self.llm.generate(prompt)
+            answer=" ".join(answer.split())
 
             return {
                 "draft_answer": answer,

@@ -30,6 +30,7 @@ class TableQAAgent:
 
         try:
             answer = self.llm.generate(prompt)
+            answer=" ".join(answer.split())
 
             return {
                 "answer": answer,
