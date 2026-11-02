@@ -13,13 +13,22 @@ class VectorStore:
 
     def __init__(self):
 
-        self.conn = psycopg2.connect(
-            host=settings.DB_HOST,
-            port=settings.DB_PORT,
-            dbname=settings.DB_NAME,
-            user=settings.DB_USER,
-            password=settings.DB_PASSWORD,
-        )
+        if settings.DATABASE_URL:
+            self.conn = psycopg2.connect(
+                settings.DATABASE_URL
+            )
+        else:
+            self.conn = psycopg2.connect(
+                host=settings.DB_HOST,
+                port=settings.DB_PORT,
+                dbname=settings.DB_NAME,
+                user=settings.DB_USER,
+                password=settings.DB_PASSWORD,
+            )
+
+        # Explicitly select the public schema.
+        with self.conn.cursor() as cur:
+            cur.execute("SET search_path TO public")
 
         register_vector(self.conn)
 

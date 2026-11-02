@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+langgraph
+google-genai
+psycopg2-binary
+pgvector
+python-dotenv
+requests
+beautifulsoup4

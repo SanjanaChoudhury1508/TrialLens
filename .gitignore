@@ -81,3 +81,11 @@ htmlcov/
 backend/data/processed/
 backend/data/embeddings/
 backend/models/
+
+# Local database exports
+triallens-data.sql
+backend/installed-packages.txt
+
+# Environment files
+.env
+backend/.env

@@ -1,7 +1,5 @@
 import re
-from app.services.embedding_service import EmbeddingService
-from app.database.vector_store import VectorStore
-from app.services.reranker import Reranker
+from app.config import settings
 
 
 class RetrievalService:
@@ -21,9 +19,22 @@ class RetrievalService:
     """
 
     def __init__(self):
-        self.reranker = Reranker()
-        self.embedder = EmbeddingService()
-        self.store = VectorStore()
+        if settings.DEPLOYMENT_MODE == "cloud":
+            from app.services.cloud_reranker import CloudReranker
+            from app.database.cloud_vector_store import CloudVectorStore
+
+            self.embedder = None
+            self.reranker = CloudReranker()
+            self.store = CloudVectorStore()
+
+        else:
+            from app.services.embedding_service import EmbeddingService
+            from app.database.vector_store import VectorStore
+            from app.services.reranker import Reranker
+
+            self.embedder = EmbeddingService()
+            self.reranker = Reranker()
+            self.store = VectorStore()
 
     def retrieve(
         self,
@@ -53,17 +64,18 @@ class RetrievalService:
         )
 
         # -------------------------------------------------
-        # 1. VECTOR SEARCH
+        # 1. VECTOR SEARCH (LOCAL ONLY)
         # -------------------------------------------------
 
-        embedding = self.embedder.embed(
-            retrieval_query
-        )
+        if settings.DEPLOYMENT_MODE == "cloud":
+            vector_results = []
+        else:
+            embedding = self.embedder.embed(retrieval_query)
 
-        vector_results = self.store.search(
-            embedding,
-            top_k=top_k * 4,
-        )
+            vector_results = self.store.search(
+                embedding,
+                top_k=top_k * 4,
+            )
 
         # -------------------------------------------------
         # 2. KEYWORD SEARCH
