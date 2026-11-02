@@ -1,4 +1,6 @@
-**# TrialLens – Multi-Agent Clinical Trial Intelligence Copilot**
+** TrialLens – Multi-Agent Clinical Trial Intelligence Copilot**
+
+
 
 \> **\*\*Current Version:\*\*** v0.6.0
 
